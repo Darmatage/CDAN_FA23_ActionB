@@ -1188,6 +1188,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 7812684055408565709, guid: 7d8ab07bd8d3a4cb2add0ac2aab20c67, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: e1f4cb27ee964487e9c12faf890b1e1d, type: 2}
+    - target: {fileID: 7812684055408565709, guid: 7d8ab07bd8d3a4cb2add0ac2aab20c67, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 1883693158}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1204,6 +1212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fd91dc538fa471f82c3f9af5e3dc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1883693158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7839740033756558355, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
+  m_PrefabInstance: {fileID: 6555333602435886768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1883693159 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7450095670610637869, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
