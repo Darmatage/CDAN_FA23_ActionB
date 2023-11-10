@@ -9,6 +9,10 @@ public class EnemyMoveHit : MonoBehaviour {
        public Rigidbody2D rb2D;
        public float speed = 4f;
        private Transform target;
+	   private Transform targetPlayer;
+	   private Transform targetHouse;
+	   private Transform targetDefender;
+	   
        public int damage = 10;
 
        public int EnemyLives = 3;
@@ -24,12 +28,18 @@ public class EnemyMoveHit : MonoBehaviour {
               scaleX = gameObject.transform.localScale.x;
 
               if (GameObject.FindGameObjectWithTag ("Player") != null) {
-                     target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> ();
+                     targetPlayer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> ();
+              }
+			  
+			  if (GameObject.FindGameObjectWithTag ("House") != null) {
+                     targetHouse = GameObject.FindGameObjectWithTag ("House").GetComponent<Transform> ();
               }
 
               if (GameObject.FindWithTag ("GameHandler") != null) {
                   gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
               }
+			  
+			  target = targetHouse;
        }
 
        void Update () {

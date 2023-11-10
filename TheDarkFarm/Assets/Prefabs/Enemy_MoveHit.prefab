@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2237113845629479797}
   - component: {fileID: 2252635591000602334}
   - component: {fileID: 9082694508334603726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_MoveHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,8 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13f020520af4ec46be6768eda26ad31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  healthLoot: {fileID: 0}
+  healthLoot: {fileID: 55732026764828406, guid: 21a7e7f8536095c489a1d978ea85843a, type: 3}
   maxHealth: 100
   currentHealth: 0
 --- !u!1 &8734995318856424277
