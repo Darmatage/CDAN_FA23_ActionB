@@ -136,7 +136,7 @@ Transform:
   - {fileID: 8834681050567363918}
   - {fileID: 7499130348533440137}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5635146582277066579
 BoxCollider2D:
@@ -209,7 +209,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7909283927856325120
 MonoBehaviour:
   m_ObjectHideFlags: 0

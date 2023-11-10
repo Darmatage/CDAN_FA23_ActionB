@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class EnemyMoveHit : MonoBehaviour {
 
-       public float knockBackForce = 20f;
+       public float knockBackForce = 10f;
        public Animator anim;
        public Rigidbody2D rb2D;
        public float speed = 4f;
-       private Transform target;
+       public Transform target;
 	   private Transform targetPlayer;
 	   private Transform targetHouse;
 	   private Transform targetDefender;
+          private bool targetSwitcher = false;
+          public float delayTimeSwitch = 0.8f;
 	   
        public int damage = 10;
 
        public int EnemyLives = 3;
        private GameHandler gameHandler;
 
-       public float attackRange = 10;
+       public float attackRange = 5;
        public bool isAttacking = false;
        private float scaleX;
 
@@ -27,25 +29,36 @@ public class EnemyMoveHit : MonoBehaviour {
               rb2D = GetComponent<Rigidbody2D> ();
               scaleX = gameObject.transform.localScale.x;
 
+             if (GameObject.FindWithTag ("GameHandler") != null) {
+                  gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
+              }
+
               if (GameObject.FindGameObjectWithTag ("Player") != null) {
                      targetPlayer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> ();
               }
 			  
-			  if (GameObject.FindGameObjectWithTag ("House") != null) {
+		if (GameObject.FindGameObjectWithTag ("House") != null) {
                      targetHouse = GameObject.FindGameObjectWithTag ("House").GetComponent<Transform> ();
               }
-
-              if (GameObject.FindWithTag ("GameHandler") != null) {
-                  gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
-              }
 			  
-			  target = targetHouse;
+		 target = targetHouse;
        }
 
        void Update () {
               float DistToPlayer = Vector3.Distance(transform.position, target.position);
 
-              if ((target != null) && (DistToPlayer <= attackRange)){
+              if (DistToPlayer <= attackRange){
+                     target = targetPlayer;
+                     targetSwitcher = true;
+              } else {
+                     if (targetSwitcher){
+                            StartCoroutine(targetSwitchDelay());
+                     } else {
+                            target = targetHouse;
+                     }
+              }
+
+              if (target != null){
                      transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
                     //anim.SetBool("Walk", true);
                     //flip enemy to face player direction. Wrong direction? Swap the * -1.
@@ -83,6 +96,12 @@ public class EnemyMoveHit : MonoBehaviour {
                      isAttacking = false;
                      //anim.SetBool("Attack", false);
               }
+       }
+
+       IEnumerator targetSwitchDelay(){
+              yield return new WaitForSeconds(delayTimeSwitch);
+              target = targetHouse;
+              targetSwitcher = false;
        }
 
        //DISPLAY the range of enemy's attack when selected in the Editor

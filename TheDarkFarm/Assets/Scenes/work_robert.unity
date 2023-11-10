@@ -332,11 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882000120561025484, guid: ab5f66834aac9974593c918615680ef0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 8882000120561025484, guid: ab5f66834aac9974593c918615680ef0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.29
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 8882000120561025484, guid: ab5f66834aac9974593c918615680ef0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -445,7 +445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958015221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 12.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -790,6 +790,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2252635591000602334, guid: 763b3bd0201969f489a4435042762143, type: 3}
+      propertyPath: attackRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252635591000602334, guid: 763b3bd0201969f489a4435042762143, type: 3}
+      propertyPath: knockBackForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2387813008703998666, guid: 763b3bd0201969f489a4435042762143, type: 3}
       propertyPath: m_Name
       value: Enemy_MoveHit
@@ -804,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9199935876305521085, guid: 763b3bd0201969f489a4435042762143, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 9199935876305521085, guid: 763b3bd0201969f489a4435042762143, type: 3}
       propertyPath: m_LocalPosition.z
