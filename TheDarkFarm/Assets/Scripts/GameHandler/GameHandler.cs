@@ -13,8 +13,6 @@ public class GameHandler : MonoBehaviour {
 
       public static int gotTokens = 0;
       public GameObject tokensText;
-	  
-	  public GameObject timeText;
 
       public bool isDefending = false;
 

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameInventory : MonoBehaviour {
+public class Game_Inventory : MonoBehaviour {
       public GameObject InventoryMenu;
       //public GameObject CraftMenu;
       public bool InvIsOpen = false;
@@ -201,11 +201,13 @@ public class GameInventory : MonoBehaviour {
 	// plant seeds #1
 	public void PlantSeeds1(){
 		InventoryRemove("item8", 1);
+		GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting1();
 	}
 
 	// plant seeds #2
 	public void PlantSeeds2(){
 		InventoryRemove("item9", 1);
+		GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting2();
 	}
 
 

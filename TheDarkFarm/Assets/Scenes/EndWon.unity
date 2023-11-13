@@ -746,7 +746,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOU LOSE
+  m_Text: YOU WIN!!
 --- !u!222 &826261145
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -831,8 +831,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The forces of darkness destroyed the talisman that held back their power.
-    Their evil will spread far and wide.
+  m_Text: You beat the forces of darkness! The Talisman is safe fro another generation.
 --- !u!222 &1816209377
 CanvasRenderer:
   m_ObjectHideFlags: 0
