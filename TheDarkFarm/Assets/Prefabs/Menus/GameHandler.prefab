@@ -62,4 +62,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: e1f4cb27ee964487e9c12faf890b1e1d, type: 2}
