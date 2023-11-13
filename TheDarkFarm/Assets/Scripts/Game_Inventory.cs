@@ -14,12 +14,22 @@ public class GameInventory : MonoBehaviour {
       public static bool item3bool = false;
       public static bool item4bool = false;
       public static bool item5bool = false;
+	  public static bool item6bool = false;
+      public static bool item7bool = false;
+      public static bool item8bool = false;
+      public static bool item9bool = false;
 
       public static int item1num = 0;
       public static int item2num = 0;
       public static int item3num = 0;
       public static int item4num = 0;
       public static int item5num = 0;
+      public static int item6num = 0;
+      public static int item7num = 0;
+      public static int item8num = 0;
+      public static int item9num = 0;	  
+	  
+	  
       //public static int coins = 0;
 
       [Header("Add item image objects here")]
@@ -28,6 +38,10 @@ public class GameInventory : MonoBehaviour {
       public GameObject item3image;
       public GameObject item4image;
       public GameObject item5image;
+      public GameObject item6image;
+      public GameObject item7image;
+      public GameObject item8image;
+      public GameObject item9image;
       //public GameObject coinText;
 
       // Item number text variables. Comment out if each item is unique (1/2).
@@ -37,6 +51,10 @@ public class GameInventory : MonoBehaviour {
       public Text item3Text;
       public Text item4Text;
       public Text item5Text;
+      public Text item6Text;
+      public Text item7Text;
+      public Text item8Text;
+      public Text item9Text;
 
       // Crafting buttons. Uncomment and add for each button:
       // public GameObject buttonCraft1; // weapon1 creation
@@ -53,7 +71,11 @@ public class GameInventory : MonoBehaviour {
             if (item3bool == true) {item3image.SetActive(true);} else {item3image.SetActive(false);}
             if (item4bool == true) {item4image.SetActive(true);} else {item4image.SetActive(false);}
             if (item5bool == true) {item5image.SetActive(true);} else {item5image.SetActive(false);}
-
+            if (item6bool == true) {item6image.SetActive(true);} else {item6image.SetActive(false);}
+            if (item7bool == true) {item7image.SetActive(true);} else {item7image.SetActive(false);}
+            if (item8bool == true) {item8image.SetActive(true);} else {item8image.SetActive(false);}
+            if (item9bool == true) {item9image.SetActive(true);} else {item9image.SetActive(false);}
+			
             //Text coinTextB = coinText.GetComponent<Text>();
             //coinTextB.text = ("COINS: " + coins);
 
@@ -72,6 +94,20 @@ public class GameInventory : MonoBehaviour {
 
             Text item5TextB = item5Text.GetComponent<Text>();
             item5TextB.text = ("" + item5num);
+			
+			Text item6TextB = item6Text.GetComponent<Text>();
+            item6TextB.text = ("" + item6num);
+
+            Text item7TextB = item7Text.GetComponent<Text>();
+            item7TextB.text = ("" + item7num);
+
+            Text item8TextB = item8Text.GetComponent<Text>();
+            item8TextB.text = ("" + item8num);
+
+            Text item9TextB = item9Text.GetComponent<Text>();
+            item9TextB.text = ("" + item9num);
+			
+			
       }
 
       public void InventoryAdd(string item){
@@ -81,6 +117,10 @@ public class GameInventory : MonoBehaviour {
             else if (foundItemName == "item3") {item3bool = true; item3num ++;}
             else if (foundItemName == "item4") {item4bool = true; item4num ++;}
             else if (foundItemName == "item5") {item5bool = true; item5num ++;}
+			else if (foundItemName == "item6") {item6bool = true; item6num ++;}
+            else if (foundItemName == "item7") {item7bool = true; item7num ++;}
+            else if (foundItemName == "item8") {item8bool = true; item8num ++;}
+            else if (foundItemName == "item9") {item9bool = true; item9num ++;}
             else { Debug.Log("This item does not exist to be added"); }
             InventoryDisplay();
 
@@ -116,6 +156,27 @@ public class GameInventory : MonoBehaviour {
                   if (item5num <= 0) { item5bool =false; }
                     // Add any other intended effects
             }
+            else if (itemRemove == "item6") {
+                  item6num -= num;
+                  if (item6num <= 0) { item6bool =false; }
+                  // Add any other intended effects
+             }
+            else if (itemRemove == "item7") {
+                  item7num -= num;
+                  if (item7num <= 0) { item7bool =false; }
+                    // Add any other intended effects
+            }
+            else if (itemRemove == "item8") {
+                  item8num -= num;
+                  if (item8num <= 0) { item8bool =false; }
+                    // Add any other intended effects
+            }
+            else if (itemRemove == "item9") {
+                  item9num -= num;
+                  if (item9num <= 0) { item9bool =false; }
+                    // Add any other intended effects
+            }			
+			
             else { Debug.Log("This item does not exist to be removed"); }
             InventoryDisplay();
       }
@@ -136,6 +197,18 @@ public class GameInventory : MonoBehaviour {
       //public void OpenCraftBook(){CraftMenu.SetActive(true);}
       //public void CloseCraftBook(){CraftMenu.SetActive(false);}
 
+
+	// plant seeds #1
+	public void PlantSeeds1(){
+		InventoryRemove("item8", 1);
+	}
+
+	// plant seeds #2
+	public void PlantSeeds2(){
+		InventoryRemove("item9", 1);
+	}
+
+
       // Reset all static inventory values on game restart.
       public void ResetAllInventory(){
             item1bool = false;
@@ -143,12 +216,20 @@ public class GameInventory : MonoBehaviour {
             item3bool = false;
             item4bool = false;
             item5bool = false;
+			item6bool = false;
+            item7bool = false;
+            item8bool = false;
+            item9bool = false;
 
             item1num = 0; // object name
             item2num = 0; // object name
             item3num = 0; // object name
             item4num = 0; // object name
             item5num = 0; // object name
+		    item6num = 0; // object name
+            item7num = 0; // object name
+            item8num = 0; // object name
+            item9num = 0; // object name
       }
 
 }

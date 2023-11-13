@@ -13,6 +13,8 @@ public class GameHandler : MonoBehaviour {
 
       public static int gotTokens = 0;
       public GameObject tokensText;
+	  
+	  public GameObject timeText;
 
       public bool isDefending = false;
 
@@ -64,7 +66,7 @@ public class GameHandler : MonoBehaviour {
             healthTextTemp.text = "HEALTH: " + playerHealth;
 
             Text tokensTextTemp = tokensText.GetComponent<Text>();
-            tokensTextTemp.text = "GOLD: " + gotTokens;
+            tokensTextTemp.text = "SCORE: " + gotTokens;
       }
 
       public void playerDies(){
