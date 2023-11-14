@@ -179,9 +179,9 @@ GameObject:
   - component: {fileID: 3515114111565725026}
   - component: {fileID: 1524110077854615910}
   - component: {fileID: 7595546364531885317}
-  - component: {fileID: 2104787932473380603}
+  - component: {fileID: 1277840956559836477}
   m_Layer: 0
-  m_Name: Defender_Rake
+  m_Name: Defender_Pitchfork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &7595546364531885317
 MonoBehaviour:
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d2f08b41cef494aa59fe537d4f0c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2104787932473380603
+--- !u!114 &1277840956559836477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,6 +270,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8915129615701966368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c611f1d0b666794ab4c4dc566d01027, type: 3}
+  m_Script: {fileID: 11500000, guid: 9285682114296f2429e3380415300fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDeathSmoke: {fileID: 9082236207881945053, guid: ab99be59eb8bc4c43a7e71b9c3abcb46, type: 3}
+  hitsBeforeBreaking: 3

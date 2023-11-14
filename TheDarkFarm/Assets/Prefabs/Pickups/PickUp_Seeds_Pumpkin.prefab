@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5561539390201622032}
   - component: {fileID: 3360672360000647283}
   m_Layer: 0
-  m_Name: PickUp_Seeds
+  m_Name: PickUp_Seeds_Pumpkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   healthBoost: 50
   speedBoost: 2
   speedTime: 2
+  canPickup: 1
 --- !u!114 &5561539390201622032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: item8
+  canPickup: 1
 --- !u!1 &1001775632452478901
 GameObject:
   m_ObjectHideFlags: 0

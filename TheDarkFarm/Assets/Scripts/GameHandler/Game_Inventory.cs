@@ -9,15 +9,15 @@ public class Game_Inventory : MonoBehaviour {
       public bool InvIsOpen = false;
 
       //5 Inventory Items:
-      public static bool item1bool = false;
-      public static bool item2bool = false;
-      public static bool item3bool = false;
-      public static bool item4bool = false;
-      public static bool item5bool = false;
+      public static bool item1bool = false; // pumpkin, hrvested
+      public static bool item2bool = false; // grain, harvested
+      public static bool item3bool = false; // sticks, gathered
+      public static bool item4bool = false; // iron, gathered
+      public static bool item5bool = false; // coal, gathered
 	  public static bool item6bool = false;
       public static bool item7bool = false;
-      public static bool item8bool = false;
-      public static bool item9bool = false;
+      public static bool item8bool = false; // seeds, pumpkin
+      public static bool item9bool = false; // seeds, grain
 
       public static int item1num = 0;
       public static int item2num = 0;
@@ -209,6 +209,23 @@ public class Game_Inventory : MonoBehaviour {
 		InventoryRemove("item9", 1);
 		GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting2();
 	}
+
+	// CRAFTING MENU:
+
+	// Pumpkin Troop
+	
+	// Scarecrow (pumpkin captain)
+
+
+	// gasoline
+	
+	
+	
+	//flamable hay stack
+	
+
+	// pitchfork
+
 
 
       // Reset all static inventory values on game restart.
