@@ -395,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &830670187
 Transform:
   m_ObjectHideFlags: 0
@@ -721,6 +721,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Defender_PumpkinTroop
       objectReference: {fileID: 0}
+    - target: {fileID: 4026626885483608636, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2a031ecc8c4381044bee35d05828e3df, type: 3}
+    - target: {fileID: 4907473493865719490, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907473493865719490, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -734,6 +746,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 830670187}
     m_Modifications:
+    - target: {fileID: 3429428701385915634, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
+      propertyPath: m_Name
+      value: rake_art
+      objectReference: {fileID: 0}
     - target: {fileID: 3515114111565725026, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -778,12 +794,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3891939957160856987, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f1b40d854f71cf147a3e0a1ab535f53c, type: 3}
+    - target: {fileID: 8128733279923558166, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128733279923558166, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8915129615701966368, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
       propertyPath: m_Name
       value: Defender_Rake
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8260058787569454671, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b567492f1e2cfb546be0bdd11f6d665f, type: 3}
@@ -839,12 +868,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6262253158405617792, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262253158405617792, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7861485762610061125, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
       propertyPath: m_Name
       value: Defender_Scarecrow
       objectReference: {fileID: 0}
+    - target: {fileID: 8120179819669617488, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bbf6e8cc43e9cf4eadc7bc7187c1581, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5560115904863758377, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
+    - {fileID: 717968067557420189, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
+    - {fileID: 876222708513862845, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
+    - {fileID: 1956984295885726544, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
+    - {fileID: 5206212133459494505, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f96efd7c279324f4e9f1982d2af7ee62, type: 3}
@@ -856,6 +902,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 830670187}
     m_Modifications:
+    - target: {fileID: 858085584816636071, guid: 3258d653d1e6923419f38944f987a7d1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a7345aeaced886346b183da7b162ddd6, type: 3}
     - target: {fileID: 7407341705449249384, guid: 3258d653d1e6923419f38944f987a7d1, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -904,8 +954,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Defender_Hay
       objectReference: {fileID: 0}
+    - target: {fileID: 8120859333794166303, guid: 3258d653d1e6923419f38944f987a7d1, type: 3}
+      propertyPath: m_Name
+      value: hay_art
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7170179981196816374, guid: 3258d653d1e6923419f38944f987a7d1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3258d653d1e6923419f38944f987a7d1, type: 3}
