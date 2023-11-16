@@ -385,6 +385,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8095753912763157818, guid: ab5f66834aac9974593c918615680ef0, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 5b79b5346c778d04b8ed9154fe5b569e, type: 2}
+    - target: {fileID: 8095753912763157818, guid: ab5f66834aac9974593c918615680ef0, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095753912763157818, guid: ab5f66834aac9974593c918615680ef0, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 5b79b5346c778d04b8ed9154fe5b569e, type: 2}
     - target: {fileID: 8882000120561025484, guid: ab5f66834aac9974593c918615680ef0, type: 3}
       propertyPath: m_RootOrder
       value: 1
