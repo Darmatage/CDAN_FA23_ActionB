@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackMelee : MonoBehaviour{
 
-      //public Animator animator;
+      public Animator anim;
       public Transform attackPt;
       public float attackRange = 0.5f;
       public float attackRate = 2f;
@@ -13,7 +13,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       public LayerMask enemyLayers;
 
       void Start(){
-           //animator = gameObject.GetComponentInChildren<Animator>();
+           anim = gameObject.GetComponentInChildren<Animator>();
       }
 
       void Update(){
@@ -27,7 +27,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       }
 
       void Attack(){
-            //animator.SetTrigger ("Melee");
+            anim.SetTrigger ("Attack");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
            
             foreach(Collider2D enemy in hitEnemies){
