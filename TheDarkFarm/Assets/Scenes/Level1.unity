@@ -593,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &830670187
 Transform:
   m_ObjectHideFlags: 0
@@ -1150,6 +1150,38 @@ PrefabInstance:
     - target: {fileID: 2755258707533970973, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
       propertyPath: m_Name
       value: Defender_PumpkinTroop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026626885483608636, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_Size.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026626885483608636, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026626885483608636, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2a031ecc8c4381044bee35d05828e3df, type: 3}
+    - target: {fileID: 4026626885483608636, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026626885483608636, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026626885483608636, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907473493865719490, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907473493865719490, guid: a03dea42f88e63e4692b8b5b8ec964db, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

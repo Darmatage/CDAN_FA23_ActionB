@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 4907473493865719490}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &559751227611442475
 BoxCollider2D:
@@ -104,6 +104,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c611f1d0b666794ab4c4dc566d01027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackEnemy: 0
+  isAttacking: 0
+  peacefullTime: 4
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyTarget: {fileID: 0}
+  startTimeBtwShots: 2
+  projectile: {fileID: 0}
+  attackRange: 10
 --- !u!1 &3211574418966395844
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +187,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a031ecc8c4381044bee35d05828e3df, type: 3}
   m_Color: {r: 0.9150943, g: 0.57721764, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
