@@ -4,18 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Game_Inventory : MonoBehaviour {
-      public GameObject InventoryMenu;
-      //public GameObject CraftMenu;
-      public bool InvIsOpen = false;
+	public GameObject InventoryMenu;
+	public GameObject CraftingMenu;
+	public bool InvIsOpen = false;
+	public bool CraftIsOpen = false;
+
+	public GameObject CraftButton_PitchFork;
+	public GameObject CraftButton_PumpkinTroop;
+	public GameObject CraftButton_Gasoline;
+	public GameObject CraftButton_Scarecrow;
+	public GameObject CraftButton_FlamingHay;	
+	
+	public Transform CraftSpawn;
+	
+	public GameObject defender_Pitchfork;
+	public GameObject defender_PumpkinTroop;
+	public GameObject defender_Scarecrow;
+	public GameObject defender_FlamingHay;
 
       //5 Inventory Items:
-      public static bool item1bool = false; // pumpkin, hrvested
+      public static bool item1bool = false; // pumpkin, harvested
       public static bool item2bool = false; // grain, harvested
       public static bool item3bool = false; // sticks, gathered
       public static bool item4bool = false; // iron, gathered
       public static bool item5bool = false; // coal, gathered
-	  public static bool item6bool = false;
-      public static bool item7bool = false;
+	  public static bool item6bool = false; // gasoline
+      public static bool item7bool = false; 
       public static bool item8bool = false; // seeds, pumpkin
       public static bool item9bool = false; // seeds, grain
 
@@ -59,13 +73,19 @@ public class Game_Inventory : MonoBehaviour {
       // Crafting buttons. Uncomment and add for each button:
       // public GameObject buttonCraft1; // weapon1 creation
 
-      void Start(){
-            InventoryMenu.SetActive(false);
-            //CraftMenu.SetActive(false);
-            InventoryDisplay();
-      }
+	void Start(){
+		InventoryMenu.SetActive(false);
+		CraftingMenu.SetActive(false);
+		InventoryDisplay();
+			
+		CraftButton_PitchFork.SetActive(false);;
+		CraftButton_PumpkinTroop.SetActive(false);;
+		CraftButton_Gasoline.SetActive(false);;
+		CraftButton_Scarecrow.SetActive(false);;
+		CraftButton_FlamingHay.SetActive(false);;
+	}
 
-      void InventoryDisplay(){
+	void InventoryDisplay(){
             if (item1bool == true) {item1image.SetActive(true);} else {item1image.SetActive(false);}
             if (item2bool == true) {item2image.SetActive(true);} else {item2image.SetActive(false);}
             if (item3bool == true) {item3image.SetActive(true);} else {item3image.SetActive(false);}
@@ -212,19 +232,50 @@ public class Game_Inventory : MonoBehaviour {
 
 	// CRAFTING MENU:
 
-	// Pumpkin Troop
+	public void OpenCloseCraftingMenu(){
+		if (CraftIsOpen){ CraftingMenu.SetActive(false); }
+        else { CraftingMenu.SetActive(true); }
+            CraftIsOpen = !CraftIsOpen;
+	}
+
+	// pitchfork: iron (item 4) + sticks (item 3) = spawn
+	public void Craft_Pitchfork(){
+		InventoryRemove ("item4", 1);
+		InventoryRemove ("item3", 1);
+		Instantiate(defender_Pitchfork, CraftSpawn.position, Quaternion.identity);
+	}
+
+	// Pumpkin Troop: pumpkin (item1) + stick(item3) = spawn 
+	public void Craft_PumpkinTroop(){
+		InventoryRemove ("item1", 1);
+		InventoryRemove ("item3", 1);
+		Instantiate(defender_PumpkinTroop, CraftSpawn.position, Quaternion.identity);
+	}
 	
-	// Scarecrow (pumpkin captain)
+	// gasoline: iron (item 4) + coal(item 5) + grain (item2) = gasoline (item 6)
+	public void Craft_Gasoline(){
+		InventoryRemove ("item4", 1);
+		InventoryRemove ("item5", 1);
+		InventoryRemove ("item2", 1);
+		InventoryAdd("item6");
+	}
+	
+	// Scarecrow (pumpkin captain): pumpkin (item1) + stick(item3) + grain (item2) = spawn 
+	public void Craft_Scarecrow(){
+		InventoryRemove ("item1", 1);
+		InventoryRemove ("item3", 1);
+		InventoryRemove ("item2", 1);
+		Instantiate(defender_Scarecrow, CraftSpawn.position, Quaternion.identity);
+	}
+
+	//flamable hay stack: grain (item2) + gasoline(item6)  = spawn
+	public void Craft_FlamingHay(){
+		InventoryRemove ("item2", 1);
+		InventoryRemove ("item6", 1);
+		Instantiate(defender_FlamingHay, CraftSpawn.position, Quaternion.identity);
+	}
 
 
-	// gasoline
-	
-	
-	
-	//flamable hay stack
-	
-
-	// pitchfork
 
 
 
