@@ -11,9 +11,10 @@ public class EnemyMoveHit : MonoBehaviour {
        public Transform target;
 	   private Transform targetPlayer;
 	   private Transform targetHouse;
+	   private Transform targetHouseArtifact;
 	   private Transform targetDefender;
           private bool targetSwitcher = false;
-          public float delayTimeSwitch = 0.8f;
+          public float delayTimeSwitch = 1f;
 	   
        public int damage = 10;
 
@@ -23,6 +24,8 @@ public class EnemyMoveHit : MonoBehaviour {
        public float attackRange = 5;
        public bool isAttacking = false;
        private float scaleX;
+
+	bool isInside = false;
 
        void Start () {
               //anim = GetComponentInChildren<Animator> ();
@@ -38,8 +41,12 @@ public class EnemyMoveHit : MonoBehaviour {
               }
 			  
 		if (GameObject.FindGameObjectWithTag ("House") != null) {
-                     targetHouse = GameObject.FindGameObjectWithTag ("House").GetComponent<Transform> ();
-              }
+			targetHouse = GameObject.FindGameObjectWithTag ("House").GetComponent<Transform> ();
+		}
+		
+		if (GameObject.FindGameObjectWithTag ("House_Artifact") != null) {
+			targetHouseArtifact = GameObject.FindGameObjectWithTag ("House_Artifact").GetComponent<Transform> ();
+		}
 			  
 		 target = targetHouse;
        }
@@ -54,7 +61,8 @@ public class EnemyMoveHit : MonoBehaviour {
                      if (targetSwitcher){
                             StartCoroutine(targetSwitchDelay());
                      } else {
-                            target = targetHouse;
+						 if (!isInside){target = targetHouse;}
+                         else {target = targetHouseArtifact;}
                      }
               }
 
@@ -100,9 +108,13 @@ public class EnemyMoveHit : MonoBehaviour {
 
        IEnumerator targetSwitchDelay(){
               yield return new WaitForSeconds(delayTimeSwitch);
-              target = targetHouse;
               targetSwitcher = false;
        }
+
+	public void goInside(){
+		isInside = true;
+	}
+
 
        //DISPLAY the range of enemy's attack when selected in the Editor
        void OnDrawGizmosSelected(){

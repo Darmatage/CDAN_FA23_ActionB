@@ -8,6 +8,7 @@ TagManager:
   - PauseMenuSlider
   - House
   - Enemy
+  - House_Artifact
   layers:
   - Default
   - TransparentFX
