@@ -71,7 +71,7 @@ public class Game_Inventory : MonoBehaviour {
       public Text item9Text;
 
       // Crafting buttons. Uncomment and add for each button:
-      // public GameObject buttonCraft1; // weapon1 creation
+       public GameObject buttonCraft1; // weapon1 creation
 
 	void Start(){
 		InventoryMenu.SetActive(false);
