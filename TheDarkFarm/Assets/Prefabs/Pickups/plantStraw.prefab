@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPumpkin: 1
-  growInterval: 2
+  growInterval: 5
   smallPlant: {fileID: 6960316047401824004}
   mediumPlant: {fileID: 747244741938351078}
   largePlant: {fileID: 4973164530416822238}
@@ -562,9 +562,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 88
   m_Sprite: {fileID: 21300000, guid: 422bb5ee5ada54b41bace644bf54d495, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

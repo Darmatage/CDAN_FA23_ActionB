@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameHandler_DayNightPhases : MonoBehaviour{
+	
+	public static int roundNumber = 0;
+	public GameObject roundText;
 	
 	//night overlay colors
 	public GameObject nightOverlay;
@@ -15,8 +19,8 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public bool isTwilight = false;
 	public GameObject timeText;
 	private float timerDisplay;
-	public float timeDayLength = 10f;
-	public float timeNightLength = 10f;
+	public float timeDayLength = 20f;
+	public float timeNightLength = 20f;
 	private float theDayTimer = 0;
 	private float theNightTimer = 0;
 	private float displayCount = 0;
@@ -29,6 +33,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public GameObject PS_MonsterSmoke;	
 
     void Start(){
+		roundText.SetActive(false);
         nightOverlay.SetActive(false);
 		nightColor = nightOverlay.GetComponent<Image>().color;
 		Nr = nightColor.r;
@@ -88,6 +93,17 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	//all day functionality starts, night functinality ends
 	public void SwitchToDay(){
 		StartCoroutine(FadeOut(nightOverlay));
+		roundNumber += 1;
+		spawnLimit -= (spawnLimit/10);
+		
+		if (roundNumber >= 11){
+			SceneManager.LoadScene("EndWon");
+		}
+		
+		Text roundTextTemp = roundText.GetComponent<Text>();
+		roundTextTemp.text = "DAY #: " + roundNumber;
+		
+		StartCoroutine(FadeTextInAndOut());
 	}
 	
 	//display timer on screen
@@ -95,6 +111,12 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		Text timeTextTemp = timeText.GetComponent<Text>();
 		if (isDayPhase){timeTextTemp.text = "TIME TO SUNSET: " + timerDisplay;}
 		else {timeTextTemp.text = "TIME TO SUNRISE: " + timerDisplay;}
+	}
+	
+	IEnumerator FadeTextInAndOut(){
+		StartCoroutine(FadeTextIn(roundText));
+		yield return new WaitForSeconds(2f);
+		StartCoroutine(FadeTextOut(roundText));
 	}
 	
 	//fade effects
@@ -141,5 +163,34 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		yield return new WaitForSeconds(3f);
 		Destroy(newSmoke);
 	}
+	
+	
+	
+	IEnumerator FadeTextIn(GameObject fadeText){
+		float alphaLevel = 0;
+		fadeText.GetComponent<Text>().color = new Color(Nr, Ng, Nb, 0);
+		roundText.SetActive(true);
+		for(int i = 0; i < 200; i++){
+			alphaLevel += 0.01f;
+			yield return null;
+			if (alphaLevel <= Na){ //set upper limit to alpha
+				fadeText.GetComponent<Text>().color = new Color(Nr, Ng, Nb, alphaLevel);
+			}
+		}
+	}
+
+	IEnumerator FadeTextOut(GameObject fadeText){
+		float alphaLevel = 1;
+		fadeText.GetComponent<Text>().color = new Color(Nr, Ng, Nb, Na);
+		for(int i = 0; i < 200; i++){
+			alphaLevel -= 0.01f;
+			yield return null;
+			fadeText.GetComponent<Text>().color = new Color(Nr, Ng, Nb, alphaLevel);
+		}
+		roundText.SetActive(false);
+	} 
+	
+	
+	
 	
 }

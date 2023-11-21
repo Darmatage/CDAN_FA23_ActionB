@@ -933,6 +933,10 @@ PrefabInstance:
       propertyPath: tokensText
       value: 
       objectReference: {fileID: 665268697}
+    - target: {fileID: 651387203500775769, guid: 7d8ab07bd8d3a4cb2add0ac2aab20c67, type: 3}
+      propertyPath: artifactText
+      value: 
+      objectReference: {fileID: 665268697}
     - target: {fileID: 1760581942674869668, guid: 7d8ab07bd8d3a4cb2add0ac2aab20c67, type: 3}
       propertyPath: m_RootOrder
       value: 3

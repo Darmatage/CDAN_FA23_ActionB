@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPumpkinTroop: 1
-  pumpkinTroopDamage: 5
-  scarecrowDamage: 10
+  pumpkinTroopDamage: 3
+  scarecrowDamage: 5
   attackEnemy: 0
   isAttacking: 0
   enemyLayers:
@@ -188,7 +188,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 85
   m_Sprite: {fileID: -350121905, guid: 83c70fe88e08b7c4aa1a1c1e12d50cfd, type: 3}
   m_Color: {r: 0.9150943, g: 0.57721764, b: 0, a: 1}
   m_FlipX: 0

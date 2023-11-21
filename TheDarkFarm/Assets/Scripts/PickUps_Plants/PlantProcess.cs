@@ -6,7 +6,7 @@ public class PlantProcess : MonoBehaviour{
 	
 	public bool isPumpkin = true;
 	private bool canHarvest = false;
-	public float growInterval = 4f;
+	public float growInterval = 10f;
 	
 	public GameObject smallPlant;
 	public GameObject mediumPlant;

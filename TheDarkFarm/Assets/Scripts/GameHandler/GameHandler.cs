@@ -10,6 +10,10 @@ public class GameHandler : MonoBehaviour {
       public static int playerHealth = 100;
       public int StartPlayerHealth = 100;
       public GameObject healthText;
+	  
+	  public static int artifactHealth = 100;
+	  public GameObject artifactText;
+	  
 
       public static int gotTokens = 0;
       public GameObject tokensText;
@@ -65,7 +69,19 @@ public class GameHandler : MonoBehaviour {
 
             Text tokensTextTemp = tokensText.GetComponent<Text>();
             tokensTextTemp.text = "SCORE: " + gotTokens;
+			
+			Text artifactTextTemp = artifactText.GetComponent<Text>();
+			artifactTextTemp.text = "ARTIFACT: " + artifactHealth;
       }
+
+	public void ArtifactDamage(int hits){
+		artifactHealth -= hits;
+		if (artifactHealth <= 0){
+			artifactHealth = 0;
+			SceneManager.LoadScene("EndLose");
+		}
+		updateStatsDisplay();
+	}
 
       public void playerDies(){
             //player.GetComponent<PlayerHurt>().playerDead();       //play Death animation

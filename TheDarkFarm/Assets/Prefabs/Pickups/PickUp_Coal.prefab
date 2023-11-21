@@ -35,7 +35,7 @@ Transform:
   - {fileID: 3160562181429688955}
   - {fileID: 2757519378956791147}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5737053778479707942
 BoxCollider2D:
@@ -285,7 +285,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 88
   m_Sprite: {fileID: 21300000, guid: 422bb5ee5ada54b41bace644bf54d495, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 75
   m_Sprite: {fileID: -1568182411, guid: 83c70fe88e08b7c4aa1a1c1e12d50cfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -189,8 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPumpkinTroop: 0
-  pumpkinTroopDamage: 5
-  scarecrowDamage: 10
+  pumpkinTroopDamage: 3
+  scarecrowDamage: 5
   attackEnemy: 0
   isAttacking: 0
   enemyLayers:

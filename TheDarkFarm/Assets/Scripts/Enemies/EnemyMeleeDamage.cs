@@ -9,7 +9,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
        public GameObject seedLoot1;
 	   public GameObject seedLoot2;
 	   private GameObject theLoot;
-       public int maxHealth = 100;
+       public int maxHealth = 9;
        public int currentHealth;
 
        void Start(){
