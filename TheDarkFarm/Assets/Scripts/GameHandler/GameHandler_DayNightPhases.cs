@@ -11,7 +11,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	float Nr, Ng, Nb, Na;
 	
 	//day and night phase timing
-	public bool isDayPhase = true;
+	public static bool isDayPhase = true;
 	public bool isTwilight = false;
 	public GameObject timeText;
 	private float timerDisplay;

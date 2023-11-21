@@ -1,133 +1,102 @@
+
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
 public class Defender_Attack : MonoBehaviour {
-       //this script offers basic flocking behavior for friendly NPCs to follow the player
-       //commented-out are functions for followers to help attack enemies if the player attacks
 		
-		float scaleX = 0;
-		float followDistance = 5f;
-       //private Animator anim;
+	public bool isPumpkinTroop;	
+	public int pumpkinTroopDamage = 5;
+	public int scarecrowDamage = 10;
+		
+	float scaleX = 0;
+	//private Animator anim;
        
-        public bool attackEnemy = false; // target enemy within range of player when player attacks
-        public bool isAttacking = false; // attack a targeted enemy
-        public float peacefullTime = 4f;
+	public bool attackEnemy = false; // target enemy within range of player when player attacks
+	public bool isAttacking = false; // attack a targeted enemy
        
 
 //Attack variables
-        public LayerMask enemyLayers;
-        public GameObject enemyTarget;
-        private Vector2 enemyPos;
-        private float distToEnemy;
-        private float timeBtwShots;
-        public float startTimeBtwShots = 2;
-        public GameObject projectile;
-        public float attackRange = 10f;
+	public LayerMask enemyLayers;
+	public GameObject enemyTarget;
+	private Vector2 enemyPos;
+	private float distToEnemy;
+	private float timeBtwShots;
+	public float startTimeBtwShots = 2;
+	public GameObject projectile;
+	public float attackRange = 10f;
        
+	void Start(){
+		//anim = gameObject.GetComponentInChildren<Animator>();
+		scaleX = gameObject.transform.localScale.x;
+		
+		//cut time to shoot in half for scarecrow? Or should it be doubled?
+		if (isPumpkinTroop == false){
+			startTimeBtwShots = startTimeBtwShots/2;
+		}
+	}
 
-       void Start(){
-              //anim = gameObject.GetComponentInChildren<Animator>();
-              //moveSpeed = Random.Range((topSpeed * 0.7f), topSpeed);
-              scaleX = gameObject.transform.localScale.x;
-       }
-
-/*
-       void Update(){
-              //if enemy is near, enter combat
-              
-              if (){
-                     followPlayer = false;
-                     attackEnemy = true;
-                     StartCoroutine(StopAttackingEnemies());
-                     FindTheEnemy();
-               }
-               
-        }
-*/
 	void FixedUpdate(){
+		
+		//if enemy is near, enter combat
+		if (GameHandler_DayNightPhases.isDayPhase==false){
+			attackEnemy = true;
+			FindTheEnemy();
+		}
 
-                //FOLLOW ENEMY
-                /*
-                if ((attackEnemy) && (enemyTarget != null)){
-                        enemyPos = enemyTarget.transform.position;
-                        distToEnemy = Vector2.Distance(transform.position, enemyPos);
+		//TRACK / FOLLOW / TURN TOWARDS ENEMY        
+		if ((attackEnemy) && (enemyTarget != null)){
+			enemyPos = enemyTarget.transform.position;
+			distToEnemy = Vector2.Distance(transform.position, enemyPos);
 
-                        // Retreat from enemy
-                        if (distToEnemy <= followDistance){
-                                transform.position = Vector2.MoveTowards (transform.position, enemyPos, -moveSpeed * Time.deltaTime);
-                                anim.SetBool("Walk", true);
-                        }
+			// Turn buddy toward enemy
+			if (enemyTarget.transform.position.x > gameObject.transform.position.x){
+				gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
+			} else {
+				gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
+			}
+		}
 
-                        // Stop following enemy
-                        if ((distToEnemy > followDistance) && (distToEnemy < startFollowDistance)){
-                                transform.position = this.transform.position;
-                                anim.SetBool("Walk", false);
-                        }
-
-                        // Follow enemy
-                        else if ((distToEnemy >= startFollowDistance)){
-                                transform.position = Vector2.MoveTowards (transform.position, enemyPos, moveSpeed * Time.deltaTime);
-                                anim.SetBool("Walk", true);
-                        }
-
-                        // Turn buddy toward enemy
-                        if (enemyTarget.transform.position.x > gameObject.transform.position.x){
-                                gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-                        } else {
-                                gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-                        }
-                }
-                */
 
 		//Timer for shooting projectiles
-                /*
-                if ((attackEnemy==true)&&(enemyTarget !=null) && (distToEnemy > followDistance) && (distToEnemy < startFollowDistance)){
-                        if (timeBtwShots <= 0) {
-                                isAttacking = true;
-                                anim.SetBool("Attack", true);
+		if ((attackEnemy==true)&&(enemyTarget !=null) && (distToEnemy < attackRange)){
+			if (timeBtwShots <= 0) {
+				isAttacking = true;
+				//anim.SetBool("Attack", true);
 
-                                GameObject myProjectile = Instantiate (projectile, transform.position, Quaternion.identity);
-                                myProjectile.GetComponent ().attackPlayer = false;
-                                myProjectile.GetComponent ().enemyTrans = enemyTarget.transform;
+				GameObject myProjectile = Instantiate (projectile, transform.position, Quaternion.identity);
+				myProjectile.GetComponent<Defender_projectile>().enemyTrans = enemyTarget.transform;
+				if (isPumpkinTroop){myProjectile.GetComponent<Defender_projectile>().damage = pumpkinTroopDamage;}
+				else {myProjectile.GetComponent<Defender_projectile>().damage = scarecrowDamage;}
 
-                                timeBtwShots = startTimeBtwShots;
-                        } else {
-                                timeBtwShots -= Time.deltaTime;
-                                isAttacking = false;
-                                anim.SetBool("Attack", true);
-                        }
-                }
-                */
+				timeBtwShots = startTimeBtwShots;
+			} else {
+				timeBtwShots -= Time.deltaTime;
+				isAttacking = false;
+				//anim.SetBool("Attack", false);
+			}
+		} 
+		//else {anim.SetBool("Attack", false);}
 
 		//end bracket of FixedUpdate:
 	}
 
 
-	/*
 	void FindTheEnemy(){
-                //animator.SetTrigger ("Melee");
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(playerPos, attackRange, enemyLayers);
+		//animator.SetTrigger ("Melee");
+		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayers);
 
-                foreach(Collider2D enemy in hitEnemies){
-                        Debug.Log("Buddy targeting " + enemy.name);
-                        enemyTarget = enemy.gameObject;
-                        //enemy.GetComponent ().TakeDamage(attackDamage);
-                }
-        }
-	*/
-
-	/*
-	IEnumerator StopAttackingEnemies(){
-                yield return new WaitForSeconds(peacefullTime);
-                followPlayer = true;
-                attackEnemy = false;
+		foreach(Collider2D enemy in hitEnemies){
+			Debug.Log("Buddy targeting " + enemy.name);
+			enemyTarget = enemy.gameObject;
+			//enemy.GetComponent ().TakeDamage(attackDamage);
+		}
 	}
-	*/
 
-        // DISPLAY the range of enemy's attack when selected in the Editor
+
+	// DISPLAY the range of enemy's attack when selected in the Editor
 	void OnDrawGizmos(){
-		Gizmos.DrawWireSphere(transform.position, followDistance);
+		Gizmos.DrawWireSphere(transform.position, attackRange);
 	}
 
 } 

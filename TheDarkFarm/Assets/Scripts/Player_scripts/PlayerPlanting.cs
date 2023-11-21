@@ -19,15 +19,16 @@ public class PlayerPlanting : MonoBehaviour{
 	}
 
     void Update(){
-		if (gameHandler.GetComponent<GameHandler_DayNightPhases>().isDayPhase)
+		if (GameHandler_DayNightPhases.isDayPhase==true){
 			if ((Input.GetKeyDown("1"))&&(Game_Inventory.item8num > 0)){
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds1();
-				playerPlanting1();
+				//playerPlanting1();
 			}
 			if ((Input.GetKeyDown("2"))&&(Game_Inventory.item9num > 0)){
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds2();
-				playerPlanting2();
+				//playerPlanting2();
 			}
+		}
     }
 
 	public void playerPlanting1(){
