@@ -9,6 +9,7 @@ public class Game_Inventory : MonoBehaviour {
 	public bool InvIsOpen = false;
 	public bool CraftIsOpen = false;
 
+	//crafting buttons / location / objects to spawn
 	public GameObject CraftButton_PitchFork;
 	public GameObject CraftButton_PumpkinTroop;
 	public GameObject CraftButton_Gasoline;
@@ -70,20 +71,73 @@ public class Game_Inventory : MonoBehaviour {
       public Text item8Text;
       public Text item9Text;
 
-      // Crafting buttons. Uncomment and add for each button:
-       public GameObject buttonCraft1; // weapon1 creation
+	//CRAFTING text numbers:
+	//pitchfork
+	public Text item3_Text_pitchfork; //stick
+	public Text item4_Text_pitchfork; //iron
+	//pumpkin troop
+	public Text item3_Text_pTroop; //stick
+	public Text item1_Text_pTroop; //pumpkin
+	//gasoline
+	public Text item4_Text_gas; //iron
+	public Text item5_Text_gas; //coal
+	public Text item2_Text_gas; //grain
+	//scarecrow
+	public Text item3_Text_scarecrow; //stick
+	public Text item1_Text_scarecrow; //pumpkin
+	public Text item2_Text_scarecrow; //grain
+	//flaming hay
+	public Text item2_Text_hay; //grain
+	public Text item6_Text_hay; //gas
+
+
+      // Crafting buttons. 
+
 
 	void Start(){
 		InventoryMenu.SetActive(false);
 		CraftingMenu.SetActive(false);
 		InventoryDisplay();
 			
-		CraftButton_PitchFork.SetActive(false);;
-		CraftButton_PumpkinTroop.SetActive(false);;
-		CraftButton_Gasoline.SetActive(false);;
-		CraftButton_Scarecrow.SetActive(false);;
-		CraftButton_FlamingHay.SetActive(false);;
+		CraftButton_PitchFork.SetActive(false);
+		CraftButton_PumpkinTroop.SetActive(false);
+		CraftButton_Gasoline.SetActive(false);
+		CraftButton_Scarecrow.SetActive(false);
+		CraftButton_FlamingHay.SetActive(false);
 	}
+
+	public void UpdateCraftButtons(){
+		if ((item3num > 0)&&(item4num > 0)){
+			CraftButton_PitchFork.SetActive(true);
+		} else {
+			CraftButton_PitchFork.SetActive(false);
+		}
+		
+		if ((item3num > 0)&&(item1num > 0)){
+			CraftButton_PumpkinTroop.SetActive(true);
+		}else {
+			CraftButton_PumpkinTroop.SetActive(false);
+		}
+		
+		if ((item4num > 0)&&(item5num > 0)&&(item2num > 0)){
+			CraftButton_Gasoline.SetActive(true);
+		}else {
+			CraftButton_Gasoline.SetActive(false);
+		}
+		
+		if ((item3num > 0)&&(item1num > 0)&&(item2num > 0)){
+			CraftButton_Scarecrow.SetActive(true);
+		}else {
+			CraftButton_Scarecrow.SetActive(false);
+		}
+		
+		if ((item2num > 0)&&(item6num > 0)){
+			CraftButton_FlamingHay.SetActive(true);
+		}else {
+			CraftButton_FlamingHay.SetActive(false);
+		}
+	}
+
 
 	void InventoryDisplay(){
             if (item1bool == true) {item1image.SetActive(true);} else {item1image.SetActive(false);}
@@ -127,7 +181,42 @@ public class Game_Inventory : MonoBehaviour {
             Text item9TextB = item9Text.GetComponent<Text>();
             item9TextB.text = ("" + item9num);
 			
-			
+		//Crafting menu:
+		Text i3Tpitch = item3_Text_pitchfork.GetComponent<Text>();
+		i3Tpitch.text = ("" + item3num);
+		
+		Text i4Tpitch = item4_Text_pitchfork.GetComponent<Text>();
+		i4Tpitch.text = ("" + item4num);
+		
+		Text i3TpTroop = item3_Text_pTroop.GetComponent<Text>();
+		i3TpTroop.text = ("" + item3num);
+		
+		Text i1TpTroop = item1_Text_pTroop.GetComponent<Text>();
+		i1TpTroop.text = ("" + item1num);
+
+		Text i4Tgas = item4_Text_gas.GetComponent<Text>();
+		i4Tgas.text = ("" + item4num);
+		
+		Text i5Tgas = item5_Text_gas.GetComponent<Text>();
+		i5Tgas.text = ("" + item5num);
+		
+		Text i2Tgas = item2_Text_gas.GetComponent<Text>();
+		i2Tgas.text = ("" + item2num);
+
+		Text i3TsCrow = item3_Text_scarecrow.GetComponent<Text>();
+		i3TsCrow.text = ("" + item3num);
+		
+		Text i1TsCrow = item1_Text_scarecrow.GetComponent<Text>();
+		i1TsCrow.text = ("" + item1num);
+		
+		Text i2TsCrow = item2_Text_scarecrow.GetComponent<Text>();
+		i2TsCrow.text = ("" + item2num);
+
+		Text i2Thay = item2_Text_hay.GetComponent<Text>();
+		i2Thay.text = ("" + item2num);
+		
+		Text i6Thay = item6_Text_hay.GetComponent<Text>();
+		i6Thay.text = ("" + item6num);
       }
 
       public void InventoryAdd(string item){
@@ -143,6 +232,7 @@ public class Game_Inventory : MonoBehaviour {
             else if (foundItemName == "item9") {item9bool = true; item9num ++;}
             else { Debug.Log("This item does not exist to be added"); }
             InventoryDisplay();
+			UpdateCraftButtons();
 
             if (!InvIsOpen){
                   OpenCloseInventory();
@@ -199,6 +289,7 @@ public class Game_Inventory : MonoBehaviour {
 			
             else { Debug.Log("This item does not exist to be removed"); }
             InventoryDisplay();
+			UpdateCraftButtons();
       }
 
       //public void CoinChange(int amount){
@@ -240,16 +331,16 @@ public class Game_Inventory : MonoBehaviour {
 
 	// pitchfork: iron (item 4) + sticks (item 3) = spawn
 	public void Craft_Pitchfork(){
-		InventoryRemove ("item4", 1);
 		InventoryRemove ("item3", 1);
-		Instantiate(defender_Pitchfork, CraftSpawn.position, Quaternion.identity);
+		InventoryRemove ("item4", 1);
+		SpawnDefender(defender_Pitchfork);
 	}
 
 	// Pumpkin Troop: pumpkin (item1) + stick(item3) = spawn 
 	public void Craft_PumpkinTroop(){
-		InventoryRemove ("item1", 1);
 		InventoryRemove ("item3", 1);
-		Instantiate(defender_PumpkinTroop, CraftSpawn.position, Quaternion.identity);
+		InventoryRemove ("item1", 1);
+		SpawnDefender(defender_PumpkinTroop);
 	}
 	
 	// gasoline: iron (item 4) + coal(item 5) + grain (item2) = gasoline (item 6)
@@ -262,20 +353,26 @@ public class Game_Inventory : MonoBehaviour {
 	
 	// Scarecrow (pumpkin captain): pumpkin (item1) + stick(item3) + grain (item2) = spawn 
 	public void Craft_Scarecrow(){
-		InventoryRemove ("item1", 1);
 		InventoryRemove ("item3", 1);
+		InventoryRemove ("item1", 1);
 		InventoryRemove ("item2", 1);
-		Instantiate(defender_Scarecrow, CraftSpawn.position, Quaternion.identity);
+		SpawnDefender(defender_Scarecrow);
 	}
 
 	//flamable hay stack: grain (item2) + gasoline(item6)  = spawn
 	public void Craft_FlamingHay(){
 		InventoryRemove ("item2", 1);
 		InventoryRemove ("item6", 1);
-		Instantiate(defender_FlamingHay, CraftSpawn.position, Quaternion.identity);
+		SpawnDefender(defender_FlamingHay);
 	}
 
-
+	//think function makes the defenders!
+	public void SpawnDefender(GameObject defenderPrefab){
+		float randX = Random.Range(-0.5f, 0.5f);
+		float randY = Random.Range(-0.5f, 0.5f);
+		Vector3 spawnPos = new Vector3(CraftSpawn.position.x + randX, CraftSpawn.position.y + randY, 0);
+		Instantiate(defenderPrefab, spawnPos, Quaternion.identity);
+	}
 
 
 

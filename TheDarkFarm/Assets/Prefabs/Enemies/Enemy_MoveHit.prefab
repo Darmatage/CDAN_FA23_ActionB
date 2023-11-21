@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13f020520af4ec46be6768eda26ad31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthLoot: {fileID: 55732026764828406, guid: 21a7e7f8536095c489a1d978ea85843a, type: 3}
+  seedLoot1: {fileID: 55732026764828406, guid: 21a7e7f8536095c489a1d978ea85843a, type: 3}
+  seedLoot2: {fileID: 55732026764828406, guid: e8321bb46e871c74a8b5cf39fd817c4c, type: 3}
   maxHealth: 80
   currentHealth: 0
 --- !u!1 &9194456800555906697

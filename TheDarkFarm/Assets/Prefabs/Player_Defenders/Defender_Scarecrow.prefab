@@ -199,4 +199,4 @@ MonoBehaviour:
   enemyTarget: {fileID: 0}
   startTimeBtwShots: 2
   projectile: {fileID: 162744007884667643, guid: 6a40351f187f9994aa63544707b40d99, type: 3}
-  attackRange: 10
+  attackRange: 6
