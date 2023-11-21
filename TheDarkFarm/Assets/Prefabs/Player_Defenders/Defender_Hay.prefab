@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 431631199011065340}
   - component: {fileID: 858085584816636071}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: hay_art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 8120859333794166303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7407341705449249384}
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7345aeaced886346b183da7b162ddd6, type: 3}
+  m_Sprite: {fileID: -1289612990, guid: 83c70fe88e08b7c4aa1a1c1e12d50cfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
