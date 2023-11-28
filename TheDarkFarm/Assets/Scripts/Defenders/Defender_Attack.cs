@@ -26,6 +26,9 @@ public class Defender_Attack : MonoBehaviour {
 	public GameObject projectile;
 	public float attackRange = 10f;
        
+	private int attackLimit = 10;  
+	private int attackNum = 0;  	
+	   
 	void Start(){
 		//anim = gameObject.GetComponentInChildren<Animator>();
 		scaleX = gameObject.transform.localScale.x;
@@ -64,10 +67,17 @@ public class Defender_Attack : MonoBehaviour {
 				isAttacking = true;
 				//anim.SetBool("Attack", true);
 
+				
 				GameObject myProjectile = Instantiate (projectile, transform.position, Quaternion.identity);
 				myProjectile.GetComponent<Defender_projectile>().enemyTrans = enemyTarget.transform;
 				if (isPumpkinTroop){myProjectile.GetComponent<Defender_projectile>().damage = pumpkinTroopDamage;}
 				else {myProjectile.GetComponent<Defender_projectile>().damage = scarecrowDamage;}
+
+				attackNum += 1; 
+				if (attackNum >= attackLimit){
+					//need to instantiate destroyed troop before removing troop
+					Destroy(gameObject);
+				}
 
 				timeBtwShots = startTimeBtwShots;
 			} else {

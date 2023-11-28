@@ -147,9 +147,10 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		}
 		
 		//create a list of enemies, so they can be deleted
+		yield return new WaitForSeconds(1f);
 		GameObject[] allMonsters = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (GameObject monster in allMonsters){
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(0.07f);
 			GameObject PS_monSmoke = Instantiate(PS_MonsterSmoke, monster.transform.position, Quaternion.identity);
 			Destroy(monster);
 			StartCoroutine(DestroySmoke(PS_monSmoke));
