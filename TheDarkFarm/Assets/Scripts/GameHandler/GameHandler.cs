@@ -104,6 +104,7 @@ public class GameHandler : MonoBehaviour {
       public void RestartGame() {
             Time.timeScale = 1f;
             GameHandler_PauseMenu.GameisPaused = false;
+			gameObject.GetComponent<Game_Inventory>().ResetAllInventory();
             SceneManager.LoadScene("MainMenu");
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;

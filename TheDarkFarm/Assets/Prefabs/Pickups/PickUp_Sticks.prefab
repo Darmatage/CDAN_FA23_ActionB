@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199263d6ae4dd4c50819022b84bd0772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHealthPickUp: 1
+  isHealthPickUp: 0
   isSpeedBoostPickUp: 0
   healthBoost: 50
   speedBoost: 2
