@@ -90,15 +90,21 @@ public class EnemyMoveHit : MonoBehaviour {
                      //This method adds force to the player, pushing them back without teleporting:
                     Rigidbody2D pushRB = other.gameObject.GetComponent<Rigidbody2D>();
                     Vector2 moveDirectionPush = rb2D.transform.position - other.transform.position;
+					
+					//tell player to end knockback:
+					other.gameObject.GetComponent<PlayerMoveAround>().EndTheKnockBack();
                     pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
-                    StartCoroutine(EndKnockBack(pushRB));
+                    //StartCoroutine(EndKnockBack(pushRB));
               }
        }
 
+/*
      IEnumerator EndKnockBack(Rigidbody2D otherRB){
               yield return new WaitForSeconds(0.2f);
               otherRB.velocity= new Vector3(0,0,0);
        }
+*/   
+	   
        public void OnCollisionExit2D(Collision2D other){
               if (other.gameObject.tag == "Player") {
                      isAttacking = false;

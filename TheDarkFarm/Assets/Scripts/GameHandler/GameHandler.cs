@@ -104,11 +104,35 @@ public class GameHandler : MonoBehaviour {
       public void RestartGame() {
             Time.timeScale = 1f;
             GameHandler_PauseMenu.GameisPaused = false;
-			gameObject.GetComponent<Game_Inventory>().ResetAllInventory();
+			ResetAllInventory();
             SceneManager.LoadScene("MainMenu");
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
       }
+	  
+	void ResetAllInventory(){
+		Game_Inventory.item1bool = false;
+		Game_Inventory.item2bool = false;
+		Game_Inventory.item3bool = false;
+		Game_Inventory.item4bool = false;
+		Game_Inventory.item5bool = false;
+		Game_Inventory.item6bool = false;
+		Game_Inventory.item7bool = false;
+		Game_Inventory.item8bool = false;
+		Game_Inventory.item9bool = false;
+
+		Game_Inventory.item1num = 0; // object name
+		Game_Inventory.item2num = 0; // object name
+		Game_Inventory.item3num = 0; // object name
+		Game_Inventory.item4num = 0; // object name
+		Game_Inventory.item5num = 0; // object name
+		Game_Inventory.item6num = 0; // object name
+		Game_Inventory.item7num = 0; // object name
+		Game_Inventory.item8num = 0; // object name
+		Game_Inventory.item9num = 0; // object name
+      }
+	  
+	  
 
       // Replay the Level where you died
       public void ReplayLastLevel() {

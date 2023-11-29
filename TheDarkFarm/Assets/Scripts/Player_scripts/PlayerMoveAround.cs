@@ -50,4 +50,15 @@ public class PlayerMoveAround : MonoBehaviour {
             theScale.x *= -1;
             transform.localScale = theScale;
       }
+	  
+	  
+	  public void EndTheKnockBack(){
+		  StartCoroutine(EndKnockBack());
+	  }
+	  
+	   IEnumerator EndKnockBack(){
+              yield return new WaitForSeconds(0.2f);
+              rb2D.velocity= new Vector3(0,0,0);
+       }
+	  
 }
