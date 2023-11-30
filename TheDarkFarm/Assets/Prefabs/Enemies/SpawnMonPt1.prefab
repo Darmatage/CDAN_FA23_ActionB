@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 9179646083006577000}
   - component: {fileID: 134769634610052355}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: spawnMonsterCave_art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 60
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.14725356, g: 0.10124599, b: 0.2264151, a: 0.5882353}
   m_FlipX: 0

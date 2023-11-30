@@ -377,6 +377,7 @@ public class Game_Inventory : MonoBehaviour {
 
 
       // Reset all static inventory values on game restart.
+	  
       public void ResetAllInventory(){
             item1bool = false;
             item2bool = false;
