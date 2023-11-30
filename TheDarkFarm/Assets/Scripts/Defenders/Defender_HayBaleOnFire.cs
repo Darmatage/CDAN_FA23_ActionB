@@ -17,7 +17,7 @@ public class Defender_HayBaleOnFire : MonoBehaviour{
 	
 	bool isOnFire = false;
 	bool isAshes = false;
-	public float timeBeforeAshes = 10f;
+	public float timeBeforeAshes = 30f;
 	public float burnCounter = 0f;
 
 	void Start(){
@@ -37,7 +37,7 @@ public class Defender_HayBaleOnFire : MonoBehaviour{
 		
 		//once ignited, count down to extinguish
 		if (isOnFire == true){
-			burnCounter += 0.1f;
+			burnCounter += 0.01f;
 			if (burnCounter >= timeBeforeAshes){
 				ExtinguishHayBale();
 				isOnFire = false;
