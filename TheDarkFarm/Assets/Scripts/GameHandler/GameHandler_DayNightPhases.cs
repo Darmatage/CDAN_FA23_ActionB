@@ -28,9 +28,14 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	//enemy spawning
 	public GameObject Enemy1;
 	public Transform[] monsterSpawns;
+	//public Transform[] monsterSpawnsCurrent;
+	public List<Transform> monsterSpawnsCurrent = new List<Transform>();
 	float spawnTimer = 0f;
-	float spawnLimit = 1f;
+	float spawnLimit = 5f;
 	public GameObject PS_MonsterSmoke;	
+
+	public GameObject[] farms;
+
 
     void Start(){
 		roundText.SetActive(false);
@@ -44,6 +49,15 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		//timerDisplay = (int)(timeDayLength - theDayTimer);
 		timerDisplay = timeDayLength - theDayTimer;
 		updateTimeText();
+		
+		//set initial farm displays
+		farms[0].SetActive(true);
+		for (int i = 1; i < farms.Length; i++){
+			farms[i].SetActive(false);
+		}
+		
+		//prime the first night for monsters spawns:
+		monsterSpawnsCurrent.Add(monsterSpawns[0]);
     }
 
     void FixedUpdate(){
@@ -77,8 +91,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 			spawnTimer += 0.01f;
 			if (spawnTimer >= spawnLimit){
 				spawnTimer = 0;
-				int randSpawn = Random.Range(0, monsterSpawns.Length);
-				GameObject newEnemy = Instantiate(Enemy1, monsterSpawns[randSpawn].position, Quaternion.identity);
+				int randSpawn = Random.Range(0, monsterSpawnsCurrent.Count);
+				GameObject newEnemy = Instantiate(Enemy1, monsterSpawnsCurrent[randSpawn].position, Quaternion.identity);
+				Debug.Log("spawned enemy at location #" + monsterSpawnsCurrent[randSpawn] + ", " + monsterSpawnsCurrent[randSpawn].position);
 			}		
 		}
 		
@@ -96,6 +111,25 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		roundNumber += 1;
 		spawnLimit -= (spawnLimit/10);
 		
+		//based on the day, display the correct ground...
+		//hide all farms:
+		for (int i = 0; i < farms.Length; i++){
+			farms[i].SetActive(false);
+		}
+		//unhide currentfarm (using this order: 1,1,2,3,4,5,6,7,8,8 -- display #8 for all remaining):
+		if (roundNumber <10){farms[roundNumber - 1].SetActive(true);} 
+		else {farms[7].SetActive(true);}
+		
+		//decide the spawn rate:
+		spawnLimit = (int)(10/roundNumber+1);
+		
+		//... and populate a new array with the correct # of spawn points
+		monsterSpawnsCurrent.Clear();
+		for (int m = 0; m < roundNumber; m++){
+			monsterSpawnsCurrent.Add(monsterSpawns[m]);
+		}
+		
+		//end game at round 11:
 		if (roundNumber >= 11){
 			SceneManager.LoadScene("EndWon");
 		}
