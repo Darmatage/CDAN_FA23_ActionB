@@ -19,7 +19,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public bool isTwilight = false;
 	public GameObject timeText;
 	private float timerDisplay;
-	public float timeDayLength = 20f;
+	public float timeDayLength = 35f;
 	public float timeNightLength = 20f;
 	private float theDayTimer = 0;
 	private float theNightTimer = 0;

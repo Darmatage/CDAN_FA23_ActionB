@@ -29,8 +29,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3386050833530902743}
-  - {fileID: 1946533969278345295}
   - {fileID: 9046841690301762350}
+  - {fileID: 1946533969278345295}
   - {fileID: 1690154464914734940}
   - {fileID: 7813737440460348769}
   - {fileID: 443122832792067325}
@@ -375,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735632349607725547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.9, y: 0, z: 0}
+  m_LocalPosition: {x: -9.9, y: 1.84, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2422,7 +2422,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3118603611166935216, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_Name
-      value: SpawnMonPt3
+      value: SpawnMonPt2
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_RootOrder
@@ -3899,7 +3899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 31.74
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3957,7 +3957,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3118603611166935216, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_Name
-      value: SpawnMonPt2
+      value: SpawnMonPt3
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_RootOrder
@@ -3965,11 +3965,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40
+      value: 38.82
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4244,11 +4244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 41.08
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 6420169919666675180, guid: 1b90875a81b5d1743bc6fe74d18f76d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5285,14 +5285,16 @@ MonoBehaviour:
   Enemy1: {fileID: 2387813008703998666, guid: 763b3bd0201969f489a4435042762143, type: 3}
   monsterSpawns:
   - {fileID: 3386050833530902743}
-  - {fileID: 1946533969278345295}
   - {fileID: 9046841690301762350}
+  - {fileID: 1946533969278345295}
   - {fileID: 1690154464914734940}
   - {fileID: 7813737440460348769}
   - {fileID: 443122832792067325}
   - {fileID: 537085195064633096}
   - {fileID: 1789273040821721140}
+  monsterSpawnsCurrent: []
   PS_MonsterSmoke: {fileID: 9082236207881945053, guid: ab99be59eb8bc4c43a7e71b9c3abcb46, type: 3}
+  farms: []
 --- !u!114 &1234590183297234195
 MonoBehaviour:
   m_ObjectHideFlags: 0

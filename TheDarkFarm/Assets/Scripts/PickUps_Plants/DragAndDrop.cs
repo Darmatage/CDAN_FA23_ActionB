@@ -12,13 +12,13 @@ public class DragAndDrop : MonoBehaviour {
                      transform.position = new Vector2 (cursorPos.x, cursorPos.y);
               }
 
-              if (Input.GetMouseButtonUp (0)) {
+              if ((Input.GetMouseButtonUp (0))||(!GameHandler_DayNightPhases.isDayPhase)) {
                      selected = false;
               }
        }
 
        void OnMouseOver(){
-              if (Input.GetMouseButtonDown (0)) {
+              if ((Input.GetMouseButtonDown (0))&&(GameHandler_DayNightPhases.isDayPhase)) {
                      selected = true;
               }
        }
