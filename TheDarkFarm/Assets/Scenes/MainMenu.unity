@@ -1131,6 +1131,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fd91dc538fa471f82c3f9af5e3dc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1881755290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7812684055408565709, guid: 7d8ab07bd8d3a4cb2add0ac2aab20c67, type: 3}
+  m_PrefabInstance: {fileID: 1881755288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d024e248750834de187d1ff2c2584ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1883693158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7839740033756558355, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
@@ -1397,6 +1408,14 @@ PrefabInstance:
     - target: {fileID: 8478398517399493005, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1881755290}
+    - target: {fileID: 8478398517399493005, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478398517399493005, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1415,6 +1434,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4142207032294588846, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142207032294588846, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142207032294588846, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6229fbbf1bcfd4c5fb9eff9941b1bdce, type: 3}
     - target: {fileID: 9045425932030094675, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
       propertyPath: m_RootOrder
       value: 4
