@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMoveHit : MonoBehaviour {
 
        public float knockBackForce = 10f;
-       //private Animator anim;
+       private Animator anim;
        private Rigidbody2D rb2D;
        public float speed = 4f;
        public Transform target;
@@ -28,7 +28,7 @@ public class EnemyMoveHit : MonoBehaviour {
 	bool isInside = false;
 
        void Start () {
-              //anim = GetComponentInChildren<Animator> ();
+              anim = GetComponentInChildren<Animator> ();
               rb2D = GetComponent<Rigidbody2D> ();
               scaleX = gameObject.transform.localScale.x;
 
@@ -68,7 +68,7 @@ public class EnemyMoveHit : MonoBehaviour {
 
               if (target != null){
                      transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
-                    //anim.SetBool("Walk", true);
+                    anim.SetBool("Walk", true);
                     //flip enemy to face player direction. Wrong direction? Swap the * -1.
                     if (target.position.x > gameObject.transform.position.x){
                                    gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
@@ -76,13 +76,13 @@ public class EnemyMoveHit : MonoBehaviour {
                                     gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
                     }
               }
-               //else { anim.SetBool("Walk", false);}
+               else { anim.SetBool("Walk", false);}
        }
 
        public void OnCollisionEnter2D(Collision2D other){
               if (other.gameObject.tag == "Player") {
                      isAttacking = true;
-                     //anim.SetBool("Attack", true);
+                     anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
                      //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 0.5f);
                      //StartCoroutine(HitEnemy());
