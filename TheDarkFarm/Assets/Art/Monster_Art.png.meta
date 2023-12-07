@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -148,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 512
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -169,7 +169,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 512
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -189,8 +189,8 @@ TextureImporter:
       name: Monster_Art_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 768
+        y: 768
         width: 256
         height: 256
       alignment: 0
@@ -210,8 +210,8 @@ TextureImporter:
       name: Monster_Art_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 0
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -231,8 +231,8 @@ TextureImporter:
       name: Monster_Art_5
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
+        x: 256
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -252,8 +252,8 @@ TextureImporter:
       name: Monster_Art_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 512
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -273,8 +273,8 @@ TextureImporter:
       name: Monster_Art_7
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
+        x: 768
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -294,8 +294,8 @@ TextureImporter:
       name: Monster_Art_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
+        x: 0
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -307,6 +307,153 @@ TextureImporter:
       bones: []
       spriteID: b7d093755e626584cb0cf9597d3a01a4
       internalID: 1997724801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster_Art_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c7e2ef461d4ea4f878b492f5336d84
+      internalID: -586640387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster_Art_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554758c2808110e479ede68e20dd3a2d
+      internalID: -1748743704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster_Art_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe788c4ee8b6ef544999ae936d38225c
+      internalID: -197774865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster_Art_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25d12c941b8d1e4c8f954ad8eccf34e
+      internalID: 1323378524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster_Art_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81921c586f2dfbe42974e2621a46b5c1
+      internalID: -770882251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster_Art_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138b0e6b3734ef8488895d3eedb1e1db
+      internalID: 709058936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster_Art_15
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411b8eda36d2aba4db7af2f7f2d30ada
+      internalID: 686699873
       vertices: []
       indices: 
       edges: []
@@ -324,6 +471,12 @@ TextureImporter:
     nameFileIdTable:
       Monster_Art_0: -694019479
       Monster_Art_1: -573216570
+      Monster_Art_10: -1748743704
+      Monster_Art_11: -197774865
+      Monster_Art_12: 1323378524
+      Monster_Art_13: -770882251
+      Monster_Art_14: 709058936
+      Monster_Art_15: 686699873
       Monster_Art_2: 1754309036
       Monster_Art_3: -2105547131
       Monster_Art_4: 70394368
@@ -331,6 +484,7 @@ TextureImporter:
       Monster_Art_6: 683038689
       Monster_Art_7: -415396522
       Monster_Art_8: 1997724801
+      Monster_Art_9: -586640387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
