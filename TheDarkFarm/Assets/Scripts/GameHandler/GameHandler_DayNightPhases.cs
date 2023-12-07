@@ -37,6 +37,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public GameObject[] farms;
 
 
+	public AudioSource DayMusic;
+	public AudioSource NightMusic;
+
     void Start(){
 		roundText.SetActive(false);
         nightOverlay.SetActive(false);
@@ -97,12 +100,16 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 			}		
 		}
 		
+		
+		
     }
 	
 	//all night functionality starts, day functionality ends
 	public void SwitchToNight(){
 		nightOverlay.SetActive(true);
 		StartCoroutine(FadeIn(nightOverlay));
+		DayMusic.Stop();
+		NightMusic.Play();
 	}
 	
 	//all day functionality starts, night functinality ends
@@ -133,6 +140,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		if (roundNumber >= 11){
 			SceneManager.LoadScene("EndWon");
 		}
+		
+		DayMusic.Play();
+		NightMusic.Stop();
 		
 		Text roundTextTemp = roundText.GetComponent<Text>();
 		roundTextTemp.text = "DAY #: " + roundNumber;
