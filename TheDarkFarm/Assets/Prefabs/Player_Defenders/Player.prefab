@@ -570,6 +570,7 @@ GameObject:
   - component: {fileID: 7909283927856325120}
   - component: {fileID: 6688882926400005847}
   - component: {fileID: 3909538041585433529}
+  - component: {fileID: 4100128519933404688}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -719,6 +720,20 @@ MonoBehaviour:
   plantPoint: {fileID: 7994266608739382067}
   plantPumpkin: {fileID: 7005438068578555780, guid: 2e26f28b04c1c7c448e128911d0a2496, type: 3}
   plantStraw: {fileID: 94918142356703195, guid: fb63399a9b300ad49bb6234611f46ecb, type: 3}
+--- !u!114 &4100128519933404688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988825184273800788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b6e1543c7b4434f8d10a0b2eaf29f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  rb2D: {fileID: 0}
 --- !u!1 &8273802489659993159
 GameObject:
   m_ObjectHideFlags: 0
