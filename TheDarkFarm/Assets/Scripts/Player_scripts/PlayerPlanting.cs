@@ -21,10 +21,12 @@ public class PlayerPlanting : MonoBehaviour{
     void Update(){
 		if (GameHandler_DayNightPhases.isDayPhase==true){
 			if ((Input.GetKeyDown("1"))&&(Game_Inventory.item8num > 0)){
+				Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds1();
 				//playerPlanting1();
-			}
+			} else {Debug.Log("");}
 			if ((Input.GetKeyDown("2"))&&(Game_Inventory.item9num > 0)){
+				Debug.Log("Player tried to plant a straw plant: " + plantPoint.position);
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds2();
 				//playerPlanting2();
 			}
@@ -33,12 +35,14 @@ public class PlayerPlanting : MonoBehaviour{
 
 	public void playerPlanting1(){
 		//plantingSFX.Play();
+		Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
 		Instantiate(plantPumpkin, plantPoint.position, Quaternion.identity);
 		//anim.SetTrigger("planting");
 	}
 	
 	public void playerPlanting2(){
 		//plantingSFX.Play();
+		Debug.Log("Player tried to plant a straw plant: " + plantPoint.position);
 		Instantiate(plantStraw, plantPoint.position, Quaternion.identity);
 		//anim.SetTrigger("planting");
 	}

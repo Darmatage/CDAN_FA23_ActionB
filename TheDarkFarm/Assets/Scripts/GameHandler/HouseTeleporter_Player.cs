@@ -16,19 +16,32 @@ public class HouseTeleporter_Player : MonoBehaviour{
 		cameraMain = GameObject.FindWithTag("MainCamera").transform;
     }
 	
+	void Update(){
+		//this input is just for testing a bug on itch.io
+		if (Input.GetKeyDown("p")){
+			Debug.Log("The Player is currently at: " + player.position + " and the Camera is at: " + cameraMain.position);
+		}
+		
+		
+	}
+	
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player"){
 			//teleport to other front door
 			if (isOutside){
 				player.position = InnerDoor.position;
+				Debug.Log("Player teleported indoors to:" + InnerDoor.position);
 				Vector3 camPos = new Vector3(InnerDoor.position.x, InnerDoor.position.y, -10);
 				cameraMain.position = camPos;
 				isOutside = false;
+				Debug.Log("Camera teleported to:" + camPos + ", isOutside = " + isOutside);
 			} else {
 				player.position = OuterDoor.position;
+				Debug.Log("Player teleported outdoors to:" + OuterDoor.position);
 				Vector3 camPos = new Vector3(OuterDoor.position.x, OuterDoor.position.y, -10);
 				cameraMain.position = camPos;
 				isOutside = true;
+				Debug.Log("Camera teleported to:" + camPos + ", isOutside = " + isOutside);
 			}
 		}	
 	}

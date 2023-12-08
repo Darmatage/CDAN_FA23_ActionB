@@ -102,9 +102,13 @@ public class GameHandler : MonoBehaviour {
 
       // Return to MainMenu
       public void RestartGame() {
+		  //reset the static variables in each GameHandler script:
             Time.timeScale = 1f;
             GameHandler_PauseMenu.GameisPaused = false;
+			GameHandler_DayNightPhases.roundNumber = 0;
+			GameHandler_DayNightPhases.isDayPhase = true;
 			ResetAllInventory();
+			
             SceneManager.LoadScene("MainMenu");
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
