@@ -35,6 +35,8 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public GameObject PS_MonsterSmoke;	
 
 	public GameObject[] farms;
+	public GameObject silo1;
+	public GameObject silo2;
 
 
 	public AudioSource DayMusic;
@@ -58,6 +60,8 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		for (int i = 1; i < farms.Length; i++){
 			farms[i].SetActive(false);
 		}
+		silo1.SetActive(false);
+		silo2.SetActive(false);
 		
 		//prime the first night for monsters spawns:
 		monsterSpawnsCurrent.Add(monsterSpawns[0]);
@@ -126,6 +130,12 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		//unhide currentfarm (using this order: 1,1,2,3,4,5,6,7,8,8 -- display #8 for all remaining):
 		if (roundNumber <10){farms[roundNumber - 1].SetActive(true);} 
 		else {farms[7].SetActive(true);}
+		
+		//special level 3 code to display grain silo:
+		if (roundNumber == 3){
+			silo1.SetActive(true);
+			silo2.SetActive(true);
+		}
 		
 		//decide the spawn rate:
 		spawnLimit = (int)(10/roundNumber+1);
