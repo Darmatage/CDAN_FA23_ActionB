@@ -16,14 +16,6 @@ public class HouseTeleporter_Player : MonoBehaviour{
 		cameraMain = GameObject.FindWithTag("MainCamera").transform;
     }
 	
-	void Update(){
-		//this input is just for testing a bug on itch.io
-		if (Input.GetKeyDown("p")){
-			Debug.Log("The Player is currently at: " + player.position + " and the Camera is at: " + cameraMain.position);
-		}
-		
-		
-	}
 	
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player"){

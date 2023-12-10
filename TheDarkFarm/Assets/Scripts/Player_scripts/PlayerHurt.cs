@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class PlayerHurt: MonoBehaviour{
 
-      public Animator animator;
-      public Rigidbody2D rb2D;
+	private Animator anim;
+	private Rigidbody2D rb2D;
+	private CameraShake cameraShake;
 
-      void Start(){
-           animator = gameObject.GetComponentInChildren<Animator>();
-           rb2D = transform.GetComponent<Rigidbody2D>();           
-      }
+	void Start(){
+		anim = gameObject.GetComponentInChildren<Animator>();
+		rb2D = transform.GetComponent<Rigidbody2D>();   
 
-      public void playerHit(){
-            animator.SetTrigger ("Hurt");
-      }
+		cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+	}
 
-      public void playerDead(){
-            rb2D.isKinematic = true;
-            animator.SetTrigger ("Dead");
-      }
+	public void playerHit(){
+		anim.SetTrigger ("Hurt");
+		cameraShake.ShakeCamera(0.12f, 0.2f);
+	}
+
+	public void playerDead(){
+		rb2D.isKinematic = true;
+		anim.SetTrigger ("Dead");
+	}
+
 }

@@ -11,14 +11,30 @@ public class PlayerPlanting : MonoBehaviour{
 	public GameObject plantPumpkin;
 	public GameObject plantStraw;
 	
+	private Transform playerObj;
+	private Transform cameraMainObj;
+	public Transform playerArtForItchTest;
+	
 	//public AudioSource plantingSFX;
 
     void Start(){
 		//anim.GetComponentInChildren<Animator>();
         gameHandler = GameObject.FindWithTag("GameHandler");
+		
+		playerObj = GameObject.FindWithTag("Player").GetComponent<Transform>();
+		cameraMainObj = GameObject.FindWithTag("CameraMain").GetComponent<Transform>();
 	}
 
     void Update(){
+		
+		
+		//this input is just for testing a bug on itch.io
+		if (Input.GetKeyDown("p")){
+			Debug.Log("The Player is currently at: " + playerObj.position + " and the Camera is at: " + cameraMainObj.position);
+			Debug.Log("The Player Art is currently at: " + playerArtForItchTest.position);
+		}
+		
+
 		if (GameHandler_DayNightPhases.isDayPhase==true){
 			if ((Input.GetKeyDown("1"))&&(Game_Inventory.item8num > 0)){
 				Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);

@@ -720,6 +720,9 @@ MonoBehaviour:
   plantPoint: {fileID: 7994266608739382067}
   plantPumpkin: {fileID: 7005438068578555780, guid: 2e26f28b04c1c7c448e128911d0a2496, type: 3}
   plantStraw: {fileID: 94918142356703195, guid: fb63399a9b300ad49bb6234611f46ecb, type: 3}
+  playerObj: {fileID: 0}
+  cameraMainObj: {fileID: 0}
+  playerArtForItchTest: {fileID: 4795418304018750292}
 --- !u!114 &4100128519933404688
 MonoBehaviour:
   m_ObjectHideFlags: 0

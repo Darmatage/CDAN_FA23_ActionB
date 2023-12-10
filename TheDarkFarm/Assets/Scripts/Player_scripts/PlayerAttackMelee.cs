@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackMelee : MonoBehaviour{
 
-      public Animator anim;
+      private Animator anim;
       public Transform attackPt;
       public float attackRange = 0.5f;
       public float attackRate = 2f;
