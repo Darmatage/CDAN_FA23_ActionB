@@ -22,7 +22,7 @@ public class PlayerPlanting : MonoBehaviour{
         gameHandler = GameObject.FindWithTag("GameHandler");
 		
 		playerObj = GameObject.FindWithTag("Player").GetComponent<Transform>();
-		cameraMainObj = GameObject.FindWithTag("CameraMain").GetComponent<Transform>();
+		cameraMainObj = GameObject.FindWithTag("MainCamera").GetComponent<Transform>();
 	}
 
     void Update(){

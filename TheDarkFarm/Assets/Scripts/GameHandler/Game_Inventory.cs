@@ -91,8 +91,9 @@ public class Game_Inventory : MonoBehaviour {
 	public Text item6_Text_hay; //gas
 
 
-      // Crafting buttons. 
-
+    // Crafting buttons: prefabs to instantiate
+	public GameObject plantPumpkin;
+	public GameObject plantStraw;
 
 	void Start(){
 		InventoryMenu.SetActive(false);
@@ -312,14 +313,23 @@ public class Game_Inventory : MonoBehaviour {
 	// plant seeds #1
 	public void PlantSeeds1(){
 		InventoryRemove("item8", 1);
-		GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting1();
+		//plantingSFX.Play();
+		Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
+		Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
+		Instantiate(plantPumpkin, plantPoint.position, Quaternion.identity);
+		//GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting1();
 	}
 
 	// plant seeds #2
 	public void PlantSeeds2(){
 		InventoryRemove("item9", 1);
-		GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting2();
+		//plantingSFX.Play();
+		Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
+		Debug.Log("Player tried to plant a straw plant: " + plantPoint.position);
+		Instantiate(plantStraw, plantPoint.position, Quaternion.identity);
+		//GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting2();
 	}
+
 
 	// CRAFTING MENU:
 
@@ -373,7 +383,6 @@ public class Game_Inventory : MonoBehaviour {
 		Vector3 spawnPos = new Vector3(CraftSpawn.position.x + randX, CraftSpawn.position.y + randY, 0);
 		Instantiate(defenderPrefab, spawnPos, Quaternion.identity);
 	}
-
 
 
       // Reset all static inventory values on game restart.

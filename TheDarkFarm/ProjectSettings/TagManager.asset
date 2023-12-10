@@ -9,6 +9,7 @@ TagManager:
   - House
   - Enemy
   - House_Artifact
+  - PlantPoint
   layers:
   - Default
   - TransparentFX

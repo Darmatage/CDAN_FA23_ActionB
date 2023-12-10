@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 7994266608739382067}
   m_Layer: 0
   m_Name: plantPoint
-  m_TagString: Player
+  m_TagString: PlantPoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,8 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6b62b5b556f09479d464fb107329b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  rb2D: {fileID: 0}
   startSpeed: 10
   isAlive: 1
 --- !u!114 &6688882926400005847
@@ -697,7 +695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69d8ccba10940347b2d521d282498bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   attackPt: {fileID: 8834681050567363918}
   attackRange: 0.5
   attackRate: 1
@@ -720,8 +717,6 @@ MonoBehaviour:
   plantPoint: {fileID: 7994266608739382067}
   plantPumpkin: {fileID: 7005438068578555780, guid: 2e26f28b04c1c7c448e128911d0a2496, type: 3}
   plantStraw: {fileID: 94918142356703195, guid: fb63399a9b300ad49bb6234611f46ecb, type: 3}
-  playerObj: {fileID: 0}
-  cameraMainObj: {fileID: 0}
   playerArtForItchTest: {fileID: 4795418304018750292}
 --- !u!114 &4100128519933404688
 MonoBehaviour:
@@ -735,8 +730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b6e1543c7b4434f8d10a0b2eaf29f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  rb2D: {fileID: 0}
 --- !u!1 &8273802489659993159
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +869,7 @@ GameObject:
   - component: {fileID: 8834681050567363918}
   m_Layer: 0
   m_Name: HitPoint
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -168,7 +168,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: e1f4cb27ee964487e9c12faf890b1e1d, type: 2}
   m_audioClip: {fileID: 8300000, guid: fa289618bdc9e476783c6794f9ed3ab0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1096,7 +1096,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: e1f4cb27ee964487e9c12faf890b1e1d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 42617b87b0dd5473ea26cfa9acf7f9f2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3982,6 +3982,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8478398517399493005, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
+      propertyPath: m_Value
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478398517399493005, guid: 30ecb4aabe8d04732b5d89d212da866c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 721245052765758932}
@@ -5624,6 +5628,8 @@ MonoBehaviour:
   monsterSpawnsCurrent: []
   PS_MonsterSmoke: {fileID: 9082236207881945053, guid: ab99be59eb8bc4c43a7e71b9c3abcb46, type: 3}
   farms: []
+  silo1: {fileID: 0}
+  silo2: {fileID: 0}
   DayMusic: {fileID: 19583460801062275}
   NightMusic: {fileID: 1555617650204291571}
 --- !u!114 &1234590183297234195
@@ -5682,6 +5688,8 @@ MonoBehaviour:
   item2_Text_scarecrow: {fileID: 502539040443776709}
   item2_Text_hay: {fileID: 8858205756396137678}
   item6_Text_hay: {fileID: 5141650778299541962}
+  plantPumpkin: {fileID: 7005438068578555780, guid: 2e26f28b04c1c7c448e128911d0a2496, type: 3}
+  plantStraw: {fileID: 94918142356703195, guid: fb63399a9b300ad49bb6234611f46ecb, type: 3}
 --- !u!114 &8026658604608528704 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 651387203500775769, guid: 7d8ab07bd8d3a4cb2add0ac2aab20c67, type: 3}
