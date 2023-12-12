@@ -41,6 +41,8 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 
 	public AudioSource DayMusic;
 	public AudioSource NightMusic;
+	
+	public AudioSource monsterSpawnSFX;
 
     void Start(){
 		roundText.SetActive(false);
@@ -98,6 +100,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 			spawnTimer += 0.01f;
 			if (spawnTimer >= spawnLimit){
 				spawnTimer = 0;
+				monsterSpawnSFX.Play();
 				int randSpawn = Random.Range(0, monsterSpawnsCurrent.Count);
 				GameObject newEnemy = Instantiate(Enemy1, monsterSpawnsCurrent[randSpawn].position, Quaternion.identity);
 				Debug.Log("spawned enemy at location #" + monsterSpawnsCurrent[randSpawn] + ", " + monsterSpawnsCurrent[randSpawn].position);
@@ -204,7 +207,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		yield return new WaitForSeconds(1f);
 		GameObject[] allMonsters = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (GameObject monster in allMonsters){
-			yield return new WaitForSeconds(0.07f);
+			yield return new WaitForSeconds(0.03f);
 			GameObject PS_monSmoke = Instantiate(PS_MonsterSmoke, monster.transform.position, Quaternion.identity);
 			Destroy(monster);
 			StartCoroutine(DestroySmoke(PS_monSmoke));

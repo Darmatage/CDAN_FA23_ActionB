@@ -12,6 +12,8 @@ public class HouseTeleporter_Enemy : MonoBehaviour{
 	private float portal_Y = 0;
 	private Vector3 scaleZero;
 	
+	public AudioSource monsterPortal_SFX;
+	
 	void Start(){
 		portalVFX_in.SetActive(false);
 		portalVFX_out.SetActive(false);
@@ -34,6 +36,8 @@ public class HouseTeleporter_Enemy : MonoBehaviour{
 		portalVFX_out.transform.localScale = scaleZero;
 		portalVFX_in.SetActive(true);
 		portalVFX_out.SetActive(true);
+		
+		monsterPortal_SFX.Play();
 		
 		//set scale values, and activate scale
 		Vector3 scaleFrom = scaleZero;

@@ -24,6 +24,8 @@ public class EnemyMoveHit : MonoBehaviour {
        public float attackRange = 5;
        public bool isAttacking = false;
        private float scaleX;
+	   
+	   public AudioSource attackSFX;
 
 	bool isInside = false;
 
@@ -81,6 +83,10 @@ public class EnemyMoveHit : MonoBehaviour {
 
        public void OnCollisionEnter2D(Collision2D other){
               if (other.gameObject.tag == "Player") {
+					if (!attackSFX.isPlaying){
+						attackSFX.Play();
+					}
+				  
                      isAttacking = true;
                      anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
