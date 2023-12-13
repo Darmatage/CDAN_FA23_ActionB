@@ -40,7 +40,8 @@ public class PlayerPlanting : MonoBehaviour{
 				Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds1();
 				//playerPlanting1();
-			} else {Debug.Log("");}
+			} 
+			
 			if ((Input.GetKeyDown("2"))&&(Game_Inventory.item9num > 0)){
 				Debug.Log("Player tried to plant a straw plant: " + plantPoint.position);
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds2();

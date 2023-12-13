@@ -125,11 +125,11 @@ MonoBehaviour:
   speed: 4
   target: {fileID: 0}
   delayTimeSwitch: 0.8
-  damage: 10
-  EnemyLives: 3
-  attackRange: 5
+  damage: 6
+  attackRange: 8
   isAttacking: 0
   attackSFX: {fileID: 3321799046013866905}
+  isInside: 0
 --- !u!114 &9082694508334603726
 MonoBehaviour:
   m_ObjectHideFlags: 0
