@@ -45,6 +45,8 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public AudioSource monsterSpawnSFX;
 
     void Start(){
+		DayMusic.Play();
+		NightMusic.Stop();
 		roundText.SetActive(false);
         nightOverlay.SetActive(false);
 		nightColor = nightOverlay.GetComponent<Image>().color;
@@ -131,7 +133,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 			farms[i].SetActive(false);
 		}
 		//unhide currentfarm (using this order: 1,1,2,3,4,5,6,7,8,8 -- display #8 for all remaining):
-		if (roundNumber <10){farms[roundNumber - 1].SetActive(true);} 
+		if (roundNumber <9){farms[roundNumber - 1].SetActive(true);} 
 		else {farms[7].SetActive(true);}
 		
 		//special level 3 code to display grain silo:
@@ -145,8 +147,10 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		
 		//... and populate a new array with the correct # of spawn points
 		monsterSpawnsCurrent.Clear();
-		for (int m = 0; m < roundNumber; m++){
-			monsterSpawnsCurrent.Add(monsterSpawns[m]);
+		if (roundNumber < 8){
+			for (int m = 0; m < roundNumber; m++){
+				monsterSpawnsCurrent.Add(monsterSpawns[m]);
+			}
 		}
 		
 		//end game at round 11:
