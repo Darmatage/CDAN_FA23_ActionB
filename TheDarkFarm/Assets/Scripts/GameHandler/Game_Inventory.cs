@@ -312,22 +312,26 @@ public class Game_Inventory : MonoBehaviour {
 
 	// plant seeds #1
 	public void PlantSeeds1(){
-		InventoryRemove("item8", 1);
-		//plantingSFX.Play();
-		Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
-		Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
-		Instantiate(plantPumpkin, plantPoint.position, Quaternion.identity);
-		//GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting1();
+		if (!GameHandler.isInside){
+			InventoryRemove("item8", 1);
+			//plantingSFX.Play();
+			Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
+			Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
+			Instantiate(plantPumpkin, plantPoint.position, Quaternion.identity);
+			//GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting1();
+		}
 	}
 
 	// plant seeds #2
 	public void PlantSeeds2(){
-		InventoryRemove("item9", 1);
-		//plantingSFX.Play();
-		Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
-		Debug.Log("Player tried to plant a straw plant: " + plantPoint.position);
-		Instantiate(plantStraw, plantPoint.position, Quaternion.identity);
-		//GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting2();
+		if (!GameHandler.isInside){
+			InventoryRemove("item9", 1);
+			//plantingSFX.Play();
+			Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
+			Debug.Log("Player tried to plant a straw plant: " + plantPoint.position);
+			Instantiate(plantStraw, plantPoint.position, Quaternion.identity);
+			//GameObject.FindWithTag("Player").GetComponent<PlayerPlanting>().playerPlanting2();
+		}
 	}
 
 

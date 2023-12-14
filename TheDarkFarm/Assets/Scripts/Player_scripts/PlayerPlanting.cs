@@ -27,22 +27,22 @@ public class PlayerPlanting : MonoBehaviour{
 
     void Update(){
 		
-		
+		/*
 		//this input is just for testing a bug on itch.io
 		if (Input.GetKeyDown("p")){
 			Debug.Log("The Player is currently at: " + playerObj.position + " and the Camera is at: " + cameraMainObj.position);
 			Debug.Log("The Player Art is currently at: " + playerArtForItchTest.position);
 		}
-		
+		*/
 
 		if (GameHandler_DayNightPhases.isDayPhase==true){
-			if ((Input.GetKeyDown("1"))&&(Game_Inventory.item8num > 0)){
+			if ((Input.GetKeyDown("1"))&&(Game_Inventory.item8num > 0)&&(!GameHandler.isInside)){
 				Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds1();
 				//playerPlanting1();
 			} 
 			
-			if ((Input.GetKeyDown("2"))&&(Game_Inventory.item9num > 0)){
+			if ((Input.GetKeyDown("2"))&&(Game_Inventory.item9num > 0)&&(!GameHandler.isInside)){
 				Debug.Log("Player tried to plant a straw plant: " + plantPoint.position);
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds2();
 				//playerPlanting2();

@@ -6,41 +6,43 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
-      private GameObject player;
-      public static int playerHealth = 100;
-      public int StartPlayerHealth = 100;
-      public GameObject healthText;
+	public static bool isInside = false;
+
+	private GameObject player;
+	public static int playerHealth = 100;
+	public int StartPlayerHealth = 100;
+	public GameObject healthText;
 	  
-	  public static int artifactHealth = 100;
-	  public GameObject artifactText;
+	public static int artifactHealth = 100;
+	public GameObject artifactText;
 	  
 
-      public static int gotTokens = 0;
-      public GameObject tokensText;
+	public static int gotTokens = 0;
+	public GameObject tokensText;
 
-      public bool isDefending = false;
+	public bool isDefending = false;
 
-      public static bool stairCaseUnlocked = false;
+	public static bool stairCaseUnlocked = false;
       //this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
 
-      private string sceneName;
-      public static string lastLevelDied;  //allows replaying the Level where you died
+	private string sceneName;
+	public static string lastLevelDied;  //allows replaying the Level where you died
 
-      void Start(){
-            player = GameObject.FindWithTag("Player");
-            sceneName = SceneManager.GetActiveScene().name;
-            //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
-                  playerHealth = StartPlayerHealth;
-            //}
-            updateStatsDisplay();
-      }
+	void Start(){
+		player = GameObject.FindWithTag("Player");
+		sceneName = SceneManager.GetActiveScene().name;
+		//if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
+		playerHealth = StartPlayerHealth;
+		//}
+		updateStatsDisplay();
+	}
 
-      public void playerGetTokens(int newTokens){
-            gotTokens += newTokens;
-            updateStatsDisplay();
-      }
+	public void playerGetTokens(int newTokens){
+		gotTokens += newTokens;
+		updateStatsDisplay();
+	}
 
-      public void playerGetHit(int damage){
+	public void playerGetHit(int damage){
            if (isDefending == false){
                   playerHealth -= damage;
                   if (playerHealth >=0){
@@ -61,9 +63,9 @@ public class GameHandler : MonoBehaviour {
                   updateStatsDisplay();
                   playerDies();
             }
-      }
+	}
 
-      public void updateStatsDisplay(){
+	public void updateStatsDisplay(){
             Text healthTextTemp = healthText.GetComponent<Text>();
             healthTextTemp.text = "HEALTH: " + playerHealth;
 
@@ -72,7 +74,7 @@ public class GameHandler : MonoBehaviour {
 			
 			Text artifactTextTemp = artifactText.GetComponent<Text>();
 			artifactTextTemp.text = "ARTIFACT: " + artifactHealth;
-      }
+	}
 
 	public void ArtifactDamage(int hits){
 		artifactHealth -= hits;
