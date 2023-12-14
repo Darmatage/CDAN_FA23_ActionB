@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: MAIN MENU
       objectReference: {fileID: 0}
+    - target: {fileID: 4797181335688609956, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5899909134239739767, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -795,8 +799,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51, y: 0}
-  m_SizeDelta: {x: 935.712, y: 150}
+  m_AnchoredPosition: {x: -349, y: 83.791245}
+  m_SizeDelta: {x: 505.7309, y: 317.5825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816209376
 MonoBehaviour:
@@ -825,13 +829,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You beat the forces of darkness! The Artifact is safe for another generation.
+  m_Text: "You beat the forces \nof darkness! \n\nThe Artifact is safe for another
+    generation."
 --- !u!222 &1816209377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1321,15 +1326,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9045425932030094675, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 323.9606
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9045425932030094675, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 161.59108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9045425932030094675, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4669552
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9045425932030094675, guid: 1277cb8ae302043638cc37c5d09241e6, type: 3}
       propertyPath: m_LocalRotation.w
