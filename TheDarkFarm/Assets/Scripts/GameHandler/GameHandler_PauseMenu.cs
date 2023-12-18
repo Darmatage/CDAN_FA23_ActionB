@@ -45,15 +45,13 @@ public class GameHandler_PauseMenu : MonoBehaviour
         }
     }
 
-    void Pause()
-    {
+    public void Pause(){
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameisPaused = true;
     }
 
-    public void Resume()
-    {
+    public void Resume(){
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameisPaused = false;
@@ -64,4 +62,6 @@ public class GameHandler_PauseMenu : MonoBehaviour
         mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
         volumeLevel = sliderValue;
     }
+	
+	
 }

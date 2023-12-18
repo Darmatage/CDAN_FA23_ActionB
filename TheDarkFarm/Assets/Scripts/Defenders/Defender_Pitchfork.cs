@@ -19,7 +19,8 @@ public class Defender_Pitchfork : MonoBehaviour{
 			//monsterDeathSFX.Play();
 			GameObject smokeVFX = Instantiate(enemyDeathSmoke, other.transform.position, Quaternion.identity);
 			StartCoroutine(DelayDestroySmoke(smokeVFX));
-			Destroy(other.gameObject);
+			//Destroy(other.gameObject);
+			other.gameObject.GetComponent<EnemyMeleeDamage>().TakeDamage(100);
 			hitsBeforeBreaking--;
 			if (hitsBeforeBreaking <= 0){
 				BreakPitchfork();

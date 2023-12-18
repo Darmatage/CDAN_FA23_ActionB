@@ -312,7 +312,7 @@ public class Game_Inventory : MonoBehaviour {
 
 	// plant seeds #1
 	public void PlantSeeds1(){
-		if (!GameHandler.isInside){
+		if ((!GameHandler.isInside)&&(!GameHandler_PauseMenu.GameisPaused)){
 			InventoryRemove("item8", 1);
 			//plantingSFX.Play();
 			Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
@@ -324,7 +324,7 @@ public class Game_Inventory : MonoBehaviour {
 
 	// plant seeds #2
 	public void PlantSeeds2(){
-		if (!GameHandler.isInside){
+		if ((!GameHandler.isInside)&&(!GameHandler_PauseMenu.GameisPaused)){
 			InventoryRemove("item9", 1);
 			//plantingSFX.Play();
 			Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();

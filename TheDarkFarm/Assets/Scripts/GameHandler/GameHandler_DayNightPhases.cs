@@ -44,6 +44,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	
 	public AudioSource monsterSpawnSFX;
 
+	//just for testing (tracking rhe nuber of enemies that spawn each night):
+	public int[] enemiesCount;
+
     void Start(){
 		DayMusic.Play();
 		NightMusic.Stop();
@@ -69,7 +72,15 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		
 		//prime the first night for monsters spawns:
 		monsterSpawnsCurrent.Add(monsterSpawns[0]);
-    }
+		
+		//just for testing (tracking rhe nuber of enemies that spawn each night):
+		for (int i=0;i<11;i++){
+			//Debug.Log("added to enemiesCount:" + i);
+			enemiesCount[i] = 0;
+		}
+		
+		
+	}
 
     void FixedUpdate(){
 		//Day / Night Timers:
@@ -106,6 +117,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 				int randSpawn = Random.Range(0, monsterSpawnsCurrent.Count);
 				GameObject newEnemy = Instantiate(Enemy1, monsterSpawnsCurrent[randSpawn].position, Quaternion.identity);
 				Debug.Log("spawned enemy at location #" + monsterSpawnsCurrent[randSpawn] + ", " + monsterSpawnsCurrent[randSpawn].position);
+				
+				//just for testing (tracking rhe nuber of enemies that spawn each night):
+				enemiesCount[roundNumber] += 1;
 			}		
 		}
 		
@@ -125,7 +139,8 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public void SwitchToDay(){
 		StartCoroutine(FadeOut(nightOverlay));
 		roundNumber += 1;
-		spawnLimit -= (spawnLimit/10);
+		gameObject.GetComponent<GameHandler>().playerGetTokens(1); // use score for Day #
+		//spawnLimit -= (spawnLimit/10);
 		
 		//based on the day, display the correct ground...
 		//hide all farms:
@@ -143,12 +158,19 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		}
 		
 		//decide the spawn rate:
-		spawnLimit = (int)(10/roundNumber+1);
+		spawnLimit = (int)(10/roundNumber+1); // slowly increase from 4-11 for first 8 rounds
+		if (roundNumber > 8){
+			spawnLimit = (int)(spawnLimit/2); //double spawn speed for last two rounds!
+		}
 		
 		//... and populate a new array with the correct # of spawn points
 		monsterSpawnsCurrent.Clear();
 		if (roundNumber < 8){
 			for (int m = 0; m < roundNumber; m++){
+				monsterSpawnsCurrent.Add(monsterSpawns[m]);
+			}
+		} else {
+			for (int m = 0; m < 8; m++){
 				monsterSpawnsCurrent.Add(monsterSpawns[m]);
 			}
 		}

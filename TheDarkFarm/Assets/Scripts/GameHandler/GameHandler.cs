@@ -17,7 +17,7 @@ public class GameHandler : MonoBehaviour {
 	public GameObject artifactText;
 	  
 
-	public static int gotTokens = 0;
+	public static int gotTokens = 0; // use score for Day #
 	public GameObject tokensText;
 
 	public bool isDefending = false;
@@ -37,6 +37,7 @@ public class GameHandler : MonoBehaviour {
 		updateStatsDisplay();
 	}
 
+	// use score for Day #
 	public void playerGetTokens(int newTokens){
 		gotTokens += newTokens;
 		updateStatsDisplay();
@@ -66,14 +67,15 @@ public class GameHandler : MonoBehaviour {
 	}
 
 	public void updateStatsDisplay(){
-            Text healthTextTemp = healthText.GetComponent<Text>();
-            healthTextTemp.text = "HEALTH: " + playerHealth;
+		Text healthTextTemp = healthText.GetComponent<Text>();
+		healthTextTemp.text = "HEALTH: " + playerHealth;
 
-            Text tokensTextTemp = tokensText.GetComponent<Text>();
-            tokensTextTemp.text = "SCORE: " + gotTokens;
+		// use score for Day #
+		Text tokensTextTemp = tokensText.GetComponent<Text>();
+		tokensTextTemp.text = "DAY: " + gotTokens;
 			
-			Text artifactTextTemp = artifactText.GetComponent<Text>();
-			artifactTextTemp.text = "ARTIFACT: " + artifactHealth;
+		Text artifactTextTemp = artifactText.GetComponent<Text>();
+		artifactTextTemp.text = "ARTIFACT: " + artifactHealth;
 	}
 
 	public void ArtifactDamage(int hits){
@@ -114,6 +116,7 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("MainMenu");
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
+			artifactHealth = 100;
       }
 	  
 	void ResetAllInventory(){
