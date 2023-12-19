@@ -1504,7 +1504,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1180, y: 700}
+  m_SizeDelta: {x: 1280, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2625980808304445887
 CanvasRenderer:
@@ -1527,14 +1527,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46226418, g: 0.40096024, b: 0.3379762, a: 0.8627451}
+  m_Color: {r: 0.7169812, g: 0.67527, b: 0.6335588, a: 0.8627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a1b7a5269b05b4c4b97d1402285b2c11, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1863,7 +1863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1200909066984942278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3127,10 +3127,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6248627613871866739, guid: 9efb513bbf2b02f448bd5f91877d0d59, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 6248627613871866739, guid: 9efb513bbf2b02f448bd5f91877d0d59, type: 3}
       propertyPath: m_Color.b
       value: 0.5754717
       objectReference: {fileID: 0}
@@ -4009,10 +4005,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6248627613871866739, guid: 9efb513bbf2b02f448bd5f91877d0d59, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 6248627613871866739, guid: 9efb513bbf2b02f448bd5f91877d0d59, type: 3}
       propertyPath: m_Color.b
       value: 0.5754717
       objectReference: {fileID: 0}
@@ -4665,10 +4657,6 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6248627613871866739, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6248627613871866739, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Color.b
       value: 0.5754717
@@ -5680,10 +5668,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6248627613871866739, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 6248627613871866739, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Color.b
       value: 0.5754717
       objectReference: {fileID: 0}
@@ -5984,17 +5968,6 @@ MonoBehaviour:
   NightMusic: {fileID: 1555617650204291571}
   monsterSpawnSFX: {fileID: 5512349829434886005}
   enemiesCount: 
-  enemiesCount0: 0
-  enemiesCount1: 0
-  enemiesCount2: 0
-  enemiesCount3: 0
-  enemiesCount4: 0
-  enemiesCount5: 0
-  enemiesCount6: 0
-  enemiesCount7: 0
-  enemiesCount8: 0
-  enemiesCount9: 0
-  enemiesCount10: 0
 --- !u!114 &1234590183297234195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6325,10 +6298,6 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6248627613871866739, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6248627613871866739, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Color.b
       value: 0.5754717
