@@ -68,11 +68,13 @@ public class EnemyMoveHit : MonoBehaviour {
 				target = null;
 				anim.SetBool("Walk", false);
 				if(targetSwitch2){ 
-					targetSwitch2 = false; //this makes sure the coroutine is only activated once
+					targetSwitch2 = false; //this makes sure the coroutine is only activated one time
 					//StopCoroutine(targetSwitchDelay());
 					StartCoroutine(targetSwitchDelay());
 				}
-			} else {
+			} 
+			//if ready to get new target (!targetswitch1):
+			else {
 				if (!isInside){target = targetHouse;}
 				else {target = targetHouseArtifact;}
 			}
@@ -81,14 +83,14 @@ public class EnemyMoveHit : MonoBehaviour {
 		if (target != null){
 			transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
 			anim.SetBool("Walk", true);
-			//flip enemy to face player direction. Wrong direction? Swap the * -1.
+			//flip enemy to face player direction. Wrong direction? Swap the * -1:
 			if (target.position.x > gameObject.transform.position.x){
 				gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
 			} else {
 				gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
 			}
 		}
-		else { anim.SetBool("Walk", false);}
+		//else { anim.SetBool("Walk", false);}
 	}
 
 	public void OnCollisionEnter2D(Collision2D other){

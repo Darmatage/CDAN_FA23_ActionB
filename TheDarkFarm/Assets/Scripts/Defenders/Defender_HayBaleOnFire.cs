@@ -9,7 +9,6 @@ public class Defender_HayBaleOnFire : MonoBehaviour{
 	public GameObject HayBale_onfire;
 	public GameObject HayBale_ashes;
 	
-	
 	//public AudioSource monsterDeathSFX;
 	//public AudioSource burningHayBaleSFX;
 	//public AudioSource extinguishedHayBaleSFX;
@@ -49,11 +48,13 @@ public class Defender_HayBaleOnFire : MonoBehaviour{
 	//destroy enemies on contact if on fire
 	public void OnTriggerEnter2D(Collider2D other){
 		if ((other.gameObject.tag == "Enemy")&&(isOnFire == true)){
+			other.gameObject.GetComponent<EnemyMeleeDamage>().TakeDamage(100);
 			Debug.Log("I burned an enemy!");
 			//monsterDeathSFX.Play();
-			GameObject smokeVFX = Instantiate(enemyDeathSmokeVFX, other.transform.position, Quaternion.identity);
-			StartCoroutine(DelayDestroySmoke(smokeVFX));
-			Destroy(other.gameObject);
+			//GameObject smokeVFX = Instantiate(enemyDeathSmokeVFX, other.transform.position, Quaternion.identity);
+			//StartCoroutine(DelayDestroySmoke(smokeVFX));
+			//Destroy(other.gameObject);
+			
 		}
 	}
 	
