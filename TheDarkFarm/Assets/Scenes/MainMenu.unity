@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4907195361860198581, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f1e6dbaa2d5bd054b9d1623d01fe37ef, type: 3}
     - target: {fileID: 5899909134239739767, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -422,7 +426,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8551109316442899515, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1254968023}
   m_SourcePrefab: {fileID: 100100000, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
 --- !u!224 &401732118 stripped
 RectTransform:
@@ -529,9 +536,10 @@ RectTransform:
   - {fileID: 2064273238}
   - {fileID: 826261143}
   - {fileID: 2064046685}
-  - {fileID: 911245457}
-  - {fileID: 401732118}
+  - {fileID: 888451705}
   - {fileID: 708448739}
+  - {fileID: 401732118}
+  - {fileID: 911245457}
   - {fileID: 1830101836}
   - {fileID: 665268700}
   - {fileID: 1883693159}
@@ -822,7 +830,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8551109316442899515, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1817357011}
   m_SourcePrefab: {fileID: 100100000, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
 --- !u!224 &708448739 stripped
 RectTransform:
@@ -909,11 +920,227 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826261142}
   m_CullTransparentMesh: 1
+--- !u!1 &888451704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888451705}
+  - component: {fileID: 888451707}
+  - component: {fileID: 888451706}
+  m_Layer: 5
+  m_Name: TextExplain_black
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &888451705
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888451704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 492310395}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8, y: -150}
+  m_SizeDelta: {x: 700, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &888451706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888451704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 60
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Take care of \nGrandpa's farm \nand watch \nyour back"
+--- !u!222 &888451707
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888451704}
+  m_CullTransparentMesh: 1
 --- !u!224 &911245457 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5899909134239739767, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
   m_PrefabInstance: {fileID: 4648423605433840423}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &975521591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8551109316442899515, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+  m_PrefabInstance: {fileID: 4648423605433840423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &975521592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975521591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817d697c16efd9b46962093f4301a7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveMove:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0070114136
+      value: 0
+      inSlope: 2.762499
+      outSlope: 2.762499
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.043292128
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.019169824
+      outSlope: 0.019169824
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.24756914
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isButton1: 0
+  isButton2: 0
+  isButton3: 1
+--- !u!1 &1254968022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8551109316442899515, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+  m_PrefabInstance: {fileID: 401732117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1254968023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254968022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817d697c16efd9b46962093f4301a7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveMove:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0070114136
+      value: 0
+      inSlope: 2.762499
+      outSlope: 2.762499
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.043292128
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.019169824
+      outSlope: 0.019169824
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.24756914
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isButton1: 0
+  isButton2: 1
+  isButton3: 0
 --- !u!1 &1593159697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,7 +1252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: -167}
+  m_AnchoredPosition: {x: 1, y: -162}
   m_SizeDelta: {x: 700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816209376
@@ -1061,7 +1288,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Take care of \nGrandpa's farm \nand watch \nyour back"
+  m_Text: "Take c  are of \nGrandpa's farm \nand       watch \nyour    back"
 --- !u!222 &1816209377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1070,6 +1297,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816209374}
   m_CullTransparentMesh: 1
+--- !u!1 &1817357010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8551109316442899515, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+  m_PrefabInstance: {fileID: 708448738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817357011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817357010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817d697c16efd9b46962093f4301a7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveMove:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0070114136
+      value: 0
+      inSlope: 2.762499
+      outSlope: 2.762499
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.043292128
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.019169824
+      outSlope: 0.019169824
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.24756914
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isButton1: 1
+  isButton2: 0
+  isButton3: 0
 --- !u!1 &1830101835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,7 +1585,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21, y: -167}
+  m_AnchoredPosition: {x: -53, y: -162}
   m_SizeDelta: {x: 700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064046686
@@ -1326,7 +1621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Take ca         \nGrandpa'            \nand wa       \nyour b      "
+  m_Text: "Take c \nGrandpa     \nand\n your"
 --- !u!222 &2064046687
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1370,7 +1665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 147}
+  m_AnchoredPosition: {x: -5, y: 152}
   m_SizeDelta: {x: 480, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064273239
@@ -1542,7 +1837,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8551109316442899515, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 975521592}
   m_SourcePrefab: {fileID: 100100000, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
 --- !u!1001 &6555333602435886768
 PrefabInstance:
