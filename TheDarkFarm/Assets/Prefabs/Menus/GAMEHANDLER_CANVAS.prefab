@@ -404,9 +404,9 @@ RectTransform:
   - {fileID: 4198888597584689549}
   - {fileID: 499831254743323588}
   - {fileID: 7647535400497492833}
+  - {fileID: 1069224330614729255}
   - {fileID: 9006702421185499772}
   - {fileID: 1200909066984942278}
-  - {fileID: 1069224330614729255}
   - {fileID: 5905585149187506485}
   m_Father: {fileID: 8325647735240200380}
   m_RootOrder: -1
@@ -1527,14 +1527,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0.67527, b: 0.6335588, a: 0.8627451}
+  m_Color: {r: 0.7169812, g: 0.67527, b: 0.6335588, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a1b7a5269b05b4c4b97d1402285b2c11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 168a3c4924ac4de46903e5d113bcddd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1863,7 +1863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1200909066984942278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3972,6 +3972,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftItem_Scarecrow
       objectReference: {fileID: 0}
+    - target: {fileID: 3531042883003209462, guid: 9efb513bbf2b02f448bd5f91877d0d59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 239
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531042883003209462, guid: 9efb513bbf2b02f448bd5f91877d0d59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22
+      objectReference: {fileID: 0}
     - target: {fileID: 4762913136196871490, guid: 9efb513bbf2b02f448bd5f91877d0d59, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4624,6 +4632,10 @@ PrefabInstance:
     - target: {fileID: 2061929525012893965, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Name
       value: CraftItem_Pitchfork
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531042883003209462, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 4561448883819182027, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Text
@@ -6265,6 +6277,22 @@ PrefabInstance:
     - target: {fileID: 2061929525012893965, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Name
       value: CraftItem_FlamingHay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531042883003209462, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531042883003209462, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531042883003209462, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531042883003209462, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4561448883819182027, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Text
