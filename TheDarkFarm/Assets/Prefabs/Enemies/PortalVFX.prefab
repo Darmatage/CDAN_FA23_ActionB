@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 2668893310504464512}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5586071650388787461
 GameObject:
@@ -42,6 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2668893310504464512}
   - component: {fileID: 6726092683791414538}
+  - component: {fileID: 5250949898616732460}
   m_Layer: 0
   m_Name: portalVFX_art
   m_TagString: Untagged
@@ -105,8 +106,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 60
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.2519585, g: 0.0690637, b: 0.3773585, a: 0.8235294}
+  m_Sprite: {fileID: 415389483, guid: cecc8f62bc4244d2590eb2add9160c71, type: 3}
+  m_Color: {r: 0.9980648, g: 0.995283, b: 1, a: 0.98039216}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116,3 +117,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5250949898616732460
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586071650388787461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8824312d5ea6c469395fe73045b56e38, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
