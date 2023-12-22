@@ -20,10 +20,12 @@ public class ButtonsTween_AlphaMove : MonoBehaviour{
        public bool isButton3 = false;
        bool doButton3 = false;
 
+		public bool isLogo = false;
+
        float timer = 0;
-       float button1Timer = 0.5f;
-       float button2Timer = 1.5f;
-       float button3Timer = 2f;
+       float button1Timer = 0.4f;
+       float button2Timer = 0.8f;
+       float button3Timer = 1.2f;
 
        float preOffsetPos;
        float startOffset = -10f; //set = 100 to drop down, -30 to rise up
@@ -39,7 +41,7 @@ public class ButtonsTween_AlphaMove : MonoBehaviour{
               thisImage.color = new Color(2.55f, 2.55f, 2.55f, 0f);
               //buttonText = GetComponentInChildren<TextMeshProUGUI>();
 			  buttonText = GetComponentInChildren<Text>();
-              buttonText.color = new Color(2.55f, 2.55f, 2.55f, 0f);
+              if (!isLogo) {buttonText.color = new Color(2.55f, 2.55f, 2.55f, 0f);}
        }
 
 	void FixedUpdate () {
@@ -50,10 +52,11 @@ public class ButtonsTween_AlphaMove : MonoBehaviour{
 
 		if (((isButton1) && (doButton1))
 			|| ((isButton2) && (doButton2))
-			|| ((isButton3) && (doButton3))){
+			|| ((isButton3) && (doButton3))
+			|| (isLogo==true)){
 			// Tween Move:
 			//if(startButtonPos.y >= preOffsetPos){ //move down
-			if(startButtonPos.y <= preOffsetPos){ //move up
+			if((startButtonPos.y <= preOffsetPos)&&(!isLogo)){ //move up
 				startButtonPos.y -= curveMove.Evaluate(elapsedMove) * startOffset;
 				transform.position = startButtonPos;
 			}
@@ -62,7 +65,7 @@ public class ButtonsTween_AlphaMove : MonoBehaviour{
 			if (elapsed <= 1f){
                             float newAlpha = curveAlpha.Evaluate(elapsed);
                             thisImage.color = new Color(2.55f, 2.55f, 2.55f, newAlpha);
-                            buttonText.color = new Color(2.55f, 2.55f, 2.55f, newAlpha);
+                            if (!isLogo) {buttonText.color = new Color(2.55f, 2.55f, 2.55f, newAlpha);}
 			}
 			elapsed += Time.deltaTime;
 			elapsedMove += (Time.deltaTime / 10f);

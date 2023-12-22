@@ -1073,6 +1073,7 @@ MonoBehaviour:
   isButton1: 0
   isButton2: 0
   isButton3: 1
+  isLogo: 0
 --- !u!1 &1254968022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8551109316442899515, guid: 05223009b548d47c0ae53a26a0063bbd, type: 3}
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   isButton1: 0
   isButton2: 1
   isButton3: 0
+  isLogo: 0
 --- !u!1 &1593159697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1367,7 @@ MonoBehaviour:
   isButton1: 1
   isButton2: 0
   isButton3: 0
+  isLogo: 0
 --- !u!1 &1830101835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,6 +1644,7 @@ GameObject:
   - component: {fileID: 2064273238}
   - component: {fileID: 2064273240}
   - component: {fileID: 2064273239}
+  - component: {fileID: 2064273241}
   m_Layer: 5
   m_Name: logo_art
   m_TagString: Untagged
@@ -1706,6 +1710,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064273237}
   m_CullTransparentMesh: 1
+--- !u!114 &2064273241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064273237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817d697c16efd9b46962093f4301a7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveMove:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isButton1: 0
+  isButton2: 0
+  isButton3: 0
+  isLogo: 1
 --- !u!1001 &4648423605433840423
 PrefabInstance:
   m_ObjectHideFlags: 0
