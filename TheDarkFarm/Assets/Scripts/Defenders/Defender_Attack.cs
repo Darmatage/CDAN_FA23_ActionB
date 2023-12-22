@@ -52,8 +52,8 @@ public class Defender_Attack : MonoBehaviour {
 			enemyPos = enemyTarget.transform.position;
 			distToEnemy = Vector2.Distance(transform.position, enemyPos);
 
-			// Turn buddy toward enemy
-			if (enemyTarget.transform.position.x > gameObject.transform.position.x){
+			// Turn turret toward enemy
+			if (enemyTarget.transform.position.x < gameObject.transform.position.x){
 				gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
 			} else {
 				gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);

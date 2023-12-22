@@ -66,6 +66,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		timerDisplay = timeDayLength - theDayTimer;
 		updateTimeText();
 		
+		//set initial day in HUD (for replay)
+		DisplayDayText();
+		
 		//set initial farm displays
 		farms[0].SetActive(true);
 		for (int i = 1; i < farms.Length; i++){
@@ -204,10 +207,15 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		DayMusic.Play();
 		NightMusic.Stop();
 		
-		Text roundTextTemp = roundText.GetComponent<Text>();
-		roundTextTemp.text = "DAY #: " + roundNumber;
+		DisplayDayText();
 		
 		StartCoroutine(FadeTextInAndOut());
+	}
+	
+	
+	public void DisplayDayText(){
+		Text roundTextTemp = roundText.GetComponent<Text>();
+		roundTextTemp.text = "DAY #: " + roundNumber;
 	}
 	
 	//display timer on screen
