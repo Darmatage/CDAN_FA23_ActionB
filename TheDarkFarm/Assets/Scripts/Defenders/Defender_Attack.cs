@@ -10,7 +10,7 @@ public class Defender_Attack : MonoBehaviour {
 	public int scarecrowDamage = 10;
 		
 	float scaleX = 0;
-	//private Animator anim;
+	private Animator anim;
        
 	public bool attackEnemy = false; // target enemy within range of player when player attacks
 	public bool isAttacking = false; // attack a targeted enemy
@@ -30,7 +30,7 @@ public class Defender_Attack : MonoBehaviour {
 	private int attackNum = 0;  	
 	   
 	void Start(){
-		//anim = gameObject.GetComponentInChildren<Animator>();
+		anim = gameObject.GetComponentInChildren<Animator>();
 		scaleX = gameObject.transform.localScale.x;
 		
 		//cut time to shoot in half for scarecrow? Or should it be doubled?
@@ -65,6 +65,7 @@ public class Defender_Attack : MonoBehaviour {
 		if ((attackEnemy==true)&&(enemyTarget !=null) && (distToEnemy < attackRange)){
 			if (timeBtwShots <= 0) {
 				isAttacking = true;
+				anim.SetTrigger("Shoot");
 				//anim.SetBool("Attack", true);
 
 				
