@@ -13,7 +13,8 @@ public class PlayerPlanting : MonoBehaviour{
 	
 	private Transform playerObj;
 	private Transform cameraMainObj;
-	public Transform playerArtForItchTest;
+	//public Transform playerArtForItchTest;
+	public GameObject playerShadow;
 	
 	//public AudioSource plantingSFX;
 
@@ -36,6 +37,8 @@ public class PlayerPlanting : MonoBehaviour{
 		*/
 
 		if (GameHandler_DayNightPhases.isDayPhase==true){
+			playerShadow.SetActive(true);
+			/*
 			if ((Input.GetKeyDown("1"))&&(Game_Inventory.item8num > 0)&&(!GameHandler.isInside)){
 				Debug.Log("Player tried to plant a pumpkin plant: " + plantPoint.position);
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds1();
@@ -47,7 +50,8 @@ public class PlayerPlanting : MonoBehaviour{
 				gameHandler.GetComponent<Game_Inventory>().PlantSeeds2();
 				//playerPlanting2();
 			}
-		}
+			*/
+		} else {playerShadow.SetActive(false);}
     }
 
 	public void playerPlanting1(){
