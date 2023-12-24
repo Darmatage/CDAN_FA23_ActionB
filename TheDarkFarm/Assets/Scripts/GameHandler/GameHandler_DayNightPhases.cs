@@ -164,20 +164,31 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		
 		//based on the day, display the correct ground...
 		//hide all farms:
+		/*
 		for (int i = 0; i < farms.Length; i++){
 			farms[i].SetActive(false);
 			waterColliders[i].SetActive(false);
 		}
+		*/
 		//unhide currentfarm (using this order: 1,1,2,3,4,5,6,7,8,8 -- display #8 for all remaining):
-		if (roundNumber <9){
+		if (roundNumber ==1){
+			farms[0].SetActive(false);
+			waterColliders[0].SetActive(true);
+			farms[1].SetActive(true);
+			waterColliders[1].SetActive(true);
+		}
+		else if ((roundNumber >1)&&(roundNumber <9)){
+			farms[roundNumber - 2].SetActive(false);
+			waterColliders[roundNumber - 2].SetActive(false);
 			farms[roundNumber - 1].SetActive(true);
 			waterColliders[roundNumber - 1].SetActive(true);
 			} 
 		else {
+			farms[6].SetActive(false);
+			waterColliders[6].SetActive(false);
 			farms[7].SetActive(true);
 			waterColliders[7].SetActive(true);
-			}
-
+		}
 
 		//special level 2 code to display grain silo:
 		if (roundNumber == 2)

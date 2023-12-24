@@ -10,7 +10,7 @@ public class GameHandler_PauseMenu : MonoBehaviour
     public static bool GameisPaused = false;
     public GameObject pauseMenuUI;
     public AudioMixer mixer;
-    public static float volumeLevel = 1.0f;
+    public static float volumeLevel = 0.5f;
     private Slider sliderVolumeCtrl;
 
     void Awake()
@@ -34,12 +34,10 @@ public class GameHandler_PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameisPaused)
-            {
+            if (GameisPaused){
                 Resume();
             }
-            else
-            {
+            else{
                 Pause();
             }
         }
@@ -49,12 +47,14 @@ public class GameHandler_PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameisPaused = true;
+		mixer.SetFloat("MusicVolume", -80f);
     }
 
     public void Resume(){
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameisPaused = false;
+		SetLevel(volumeLevel);
     }
 
     public void SetLevel(float sliderValue)
@@ -63,5 +63,9 @@ public class GameHandler_PauseMenu : MonoBehaviour
         volumeLevel = sliderValue;
     }
 	
+	public void PauseButton(){
+		if (GameisPaused){Resume();}
+		else{Pause();}
+	}
 	
 }

@@ -6,7 +6,7 @@ public class Defender_projectile : MonoBehaviour{
 	
     public int damage = 1;
 	public float speed = 10f;
-	public float SelfDestructTime = 2.0f;
+	public float SelfDestructTime = 1.5f;
 	
 	public GameHandler gameHandlerObj;
 	public GameObject hitEffectAnim;
@@ -17,7 +17,11 @@ public class Defender_projectile : MonoBehaviour{
 	void Start() {
 		//NOTE: transform gets location, but we need Vector2 for direction, so we can use MoveTowards.
 		
-		target = new Vector2(enemyTrans.position.x, enemyTrans.position.y);
+		if (enemyTrans != null){
+			target = new Vector2(enemyTrans.position.x, enemyTrans.position.y);
+		} else {
+			Destroy (gameObject);
+		}
 
 		if (gameHandlerObj == null){
 			gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
