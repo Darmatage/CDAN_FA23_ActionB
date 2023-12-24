@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler_DayNightPhases : MonoBehaviour{
 	
+	public AudioSource victoryMusic;
+	
 	public static int roundNumber = 0;
 	public GameObject roundText;
 	
@@ -35,6 +37,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public GameObject PS_MonsterSmoke;	
 
 	public GameObject[] farms;
+	public GameObject[] waterColliders;
 	public GameObject silo1;
 	public GameObject silo2;
 	public GameObject trees1a;
@@ -51,7 +54,14 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	//just for testing (tracking rhe nuber of enemies that spawn each night):
 	public int[] enemiesCount;
 
+	public GameObject YouWinDisplay;
+
+	void Awake(){
+		YouWinDisplay.SetActive(false);
+	}
+
     void Start(){
+		roundNumber = 0;
 		DayMusic.Play();
 		NightMusic.Stop();
 		roundText.SetActive(false);
@@ -69,11 +79,14 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		//set initial day in HUD (for replay)
 		DisplayDayText();
 		
-		//set initial farm displays
+		//set initial farm displays and waterColliders
 		farms[0].SetActive(true);
+		waterColliders[0].SetActive(true);
 		for (int i = 1; i < farms.Length; i++){
 			farms[i].SetActive(false);
+			waterColliders[i].SetActive(false);
 		}
+		
 		silo1.SetActive(false);
 		silo2.SetActive(false);
 		trees1a.SetActive(true);
@@ -89,8 +102,6 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 			//Debug.Log("added to enemiesCount:" + i);
 			enemiesCount[i] = 0;
 		}
-		
-		
 	}
 
     void FixedUpdate(){
@@ -133,9 +144,6 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 				enemiesCount[roundNumber] += 1;
 			}		
 		}
-		
-		
-		
     }
 	
 	//all night functionality starts, day functionality ends
@@ -150,6 +158,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	public void SwitchToDay(){
 		StartCoroutine(FadeOut(nightOverlay));
 		roundNumber += 1;
+		timeNightLength += 1;
 		gameObject.GetComponent<GameHandler>().playerGetTokens(1); // use score for Day #
 		//spawnLimit -= (spawnLimit/10);
 		
@@ -157,10 +166,17 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		//hide all farms:
 		for (int i = 0; i < farms.Length; i++){
 			farms[i].SetActive(false);
+			waterColliders[i].SetActive(false);
 		}
 		//unhide currentfarm (using this order: 1,1,2,3,4,5,6,7,8,8 -- display #8 for all remaining):
-		if (roundNumber <9){farms[roundNumber - 1].SetActive(true);} 
-		else {farms[7].SetActive(true);}
+		if (roundNumber <9){
+			farms[roundNumber - 1].SetActive(true);
+			waterColliders[roundNumber - 1].SetActive(true);
+			} 
+		else {
+			farms[7].SetActive(true);
+			waterColliders[7].SetActive(true);
+			}
 
 
 		//special level 2 code to display grain silo:
@@ -201,7 +217,10 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		
 		//end game at round 11:
 		if (roundNumber >= 11){
-			SceneManager.LoadScene("EndWon");
+			DayMusic.volume = DayMusic.volume / 2;
+			YouWinDisplay.SetActive(true);
+			victoryMusic.Play();
+			EndWinDelay();
 		}
 		
 		DayMusic.Play();
@@ -303,7 +322,15 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		roundText.SetActive(false);
 	} 
 	
+	IEnumerator EndWinDelay(){
+		yield return new WaitForSeconds(5f);
+		EndWinGo();
+	}
 	
-	
+	public void EndWinGo(){
+		roundNumber = 0;
+		GetComponent<GameHandler>().ResetAllInventory();
+		SceneManager.LoadScene("EndWon");
+	}
 	
 }

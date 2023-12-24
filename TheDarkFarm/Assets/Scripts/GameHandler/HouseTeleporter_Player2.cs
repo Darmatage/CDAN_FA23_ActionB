@@ -22,12 +22,14 @@ public class HouseTeleporter_Player2 : MonoBehaviour{
 				GameHandler.isInside = true;
 			} else {GameHandler.isInside = false;}
 			
+			GameObject.FindWithTag("PlayerFeet").GetComponent<Player_walkSounds>().TeleportStopWalkSounds();
 			StartCoroutine(TeleportPlayer());
 		}
 	}
 	
 	IEnumerator TeleportPlayer(){
 		yield return new WaitForSeconds(0.01f);
+		GameObject.FindWithTag("PlayerFeet").GetComponent<Player_walkSounds>().TeleportStartWalkSounds();
 		
 		//teleport to other door
 			player.position = theDoor.position;

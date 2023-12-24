@@ -82,7 +82,7 @@ public class GameHandler : MonoBehaviour {
 		artifactHealth -= hits;
 		if (artifactHealth <= 0){
 			artifactHealth = 0;
-			SceneManager.LoadScene("EndLose");
+			StartCoroutine(DeathPause());
 		}
 		updateStatsDisplay();
 	}
@@ -96,7 +96,8 @@ public class GameHandler : MonoBehaviour {
       IEnumerator DeathPause(){
             //player.GetComponent<PlayerMove>().isAlive = false;
             //player.GetComponent<PlayerJump>().isAlive = false;
-            yield return new WaitForSeconds(1.0f);
+			yield return new WaitForSeconds(1.0f);
+			ResetAllInventory();
             SceneManager.LoadScene("EndLose");
       }
 
@@ -104,22 +105,28 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("LevelComic");
       }
 
-      // Return to MainMenu
-      public void RestartGame() {
-		  //reset the static variables in each GameHandler script:
-            Time.timeScale = 1f;
-            GameHandler_PauseMenu.GameisPaused = false;
-			GameHandler_DayNightPhases.roundNumber = 0;
-			GameHandler_DayNightPhases.isDayPhase = true;
-			ResetAllInventory();
-			
-            SceneManager.LoadScene("MainMenu");
-             // Reset all static variables here, for new games:
-            playerHealth = StartPlayerHealth;
-			artifactHealth = 100;
-      }
+	// Return to MainMenu from FrameScenes:
+	public void RestartGame() {
+		SceneManager.LoadScene("MainMenu");
+	}
 	  
-	void ResetAllInventory(){
+	// Return to MainMenu from game pause menu
+	public void RestartFromInGame() {
+		ResetAllInventory();
+		SceneManager.LoadScene("MainMenu");
+	}
+	  
+	public void ResetAllInventory(){
+		Debug.Log("reseting all stats...");
+		//reset the static variables in each GameHandler script:
+		Time.timeScale = 1f;
+        GameHandler_PauseMenu.GameisPaused = false;
+		GameHandler_DayNightPhases.roundNumber = 0;
+		GameHandler_DayNightPhases.isDayPhase = true;
+		playerHealth = StartPlayerHealth;
+		artifactHealth = 100;
+		
+		//reset the inventory:
 		Game_Inventory.item1bool = false;
 		Game_Inventory.item2bool = false;
 		Game_Inventory.item3bool = false;
@@ -139,6 +146,7 @@ public class GameHandler : MonoBehaviour {
 		Game_Inventory.item7num = 0; // object name
 		Game_Inventory.item8num = 0; // object name
 		Game_Inventory.item9num = 0; // object name
+		Debug.Log("All stats reset. roundNumber = " + GameHandler_DayNightPhases.roundNumber);
       }
 	  
 	  

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Game_Inventory : MonoBehaviour {
+	public AudioSource inventorySFX;
+	public AudioSource digPlantSFX;
 	public GameObject InventoryMenu;
 	public GameObject CraftingMenu;
 	public bool InvIsOpen = false;
@@ -234,10 +236,12 @@ public class Game_Inventory : MonoBehaviour {
             else { Debug.Log("This item does not exist to be added"); }
             InventoryDisplay();
 			UpdateCraftButtons();
-
+			
             if (!InvIsOpen){
                   OpenCloseInventory();
-            }
+            } else {
+				inventorySFX.Play();
+			}
       }
 
       public void InventoryRemove(string item, int num){
@@ -298,12 +302,13 @@ public class Game_Inventory : MonoBehaviour {
             //InventoryDisplay();
       //}
 
-      // Open and Close the Inventory. Use this function on a button next to the inventory bar.
-      public void OpenCloseInventory(){
-            if (InvIsOpen){ InventoryMenu.SetActive(false); }
-            else { InventoryMenu.SetActive(true); }
-            InvIsOpen = !InvIsOpen;
-      }
+	// Open and Close the Inventory. Use this function on a button next to the inventory bar.
+	public void OpenCloseInventory(){
+		inventorySFX.Play();
+		if (InvIsOpen){ InventoryMenu.SetActive(false); }
+		else { InventoryMenu.SetActive(true); }
+		InvIsOpen = !InvIsOpen;
+	}
 
       //Open and Close the Cookbook
       //public void OpenCraftBook(){CraftMenu.SetActive(true);}
@@ -313,6 +318,7 @@ public class Game_Inventory : MonoBehaviour {
 	// plant seeds #1
 	public void PlantSeeds1(){
 		if ((!GameHandler.isInside)&&(!GameHandler_PauseMenu.GameisPaused)){
+			digPlantSFX.Play();
 			InventoryRemove("item8", 1);
 			//plantingSFX.Play();
 			Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
@@ -325,6 +331,7 @@ public class Game_Inventory : MonoBehaviour {
 	// plant seeds #2
 	public void PlantSeeds2(){
 		if ((!GameHandler.isInside)&&(!GameHandler_PauseMenu.GameisPaused)){
+			digPlantSFX.Play();
 			InventoryRemove("item9", 1);
 			//plantingSFX.Play();
 			Transform plantPoint = GameObject.FindWithTag("PlantPoint").GetComponent<Transform>();
@@ -338,6 +345,7 @@ public class Game_Inventory : MonoBehaviour {
 	// CRAFTING MENU:
 
 	public void OpenCloseCraftingMenu(){
+		inventorySFX.Play();
 		if (CraftIsOpen){ CraftingMenu.SetActive(false); }
         else { CraftingMenu.SetActive(true); }
             CraftIsOpen = !CraftIsOpen;
@@ -345,6 +353,7 @@ public class Game_Inventory : MonoBehaviour {
 
 	// pitchfork: iron (item 4) + sticks (item 3) = spawn
 	public void Craft_Pitchfork(){
+		inventorySFX.Play();
 		InventoryRemove ("item3", 1);
 		InventoryRemove ("item4", 1);
 		SpawnDefender(defender_Pitchfork);
@@ -352,6 +361,7 @@ public class Game_Inventory : MonoBehaviour {
 
 	// Pumpkin Troop: pumpkin (item1) + stick(item3) = spawn 
 	public void Craft_PumpkinTroop(){
+		inventorySFX.Play();
 		InventoryRemove ("item3", 1);
 		InventoryRemove ("item1", 1);
 		SpawnDefender(defender_PumpkinTroop);
@@ -359,6 +369,7 @@ public class Game_Inventory : MonoBehaviour {
 	
 	// gasoline: iron (item 4) + coal(item 5) + grain (item2) = gasoline (item 6)
 	public void Craft_Gasoline(){
+		inventorySFX.Play();
 		InventoryRemove ("item4", 1);
 		InventoryRemove ("item5", 1);
 		InventoryRemove ("item2", 1);
@@ -367,6 +378,7 @@ public class Game_Inventory : MonoBehaviour {
 	
 	// Scarecrow (pumpkin captain): pumpkin (item1) + stick(item3) + grain (item2) = spawn 
 	public void Craft_Scarecrow(){
+		inventorySFX.Play();
 		InventoryRemove ("item3", 1);
 		InventoryRemove ("item1", 1);
 		InventoryRemove ("item2", 1);
@@ -375,12 +387,13 @@ public class Game_Inventory : MonoBehaviour {
 
 	//flamable hay stack: grain (item2) + gasoline(item6)  = spawn
 	public void Craft_FlamingHay(){
+		inventorySFX.Play();
 		InventoryRemove ("item2", 1);
 		InventoryRemove ("item6", 1);
 		SpawnDefender(defender_FlamingHay);
 	}
 
-	//think function makes the defenders!
+	//this function spawns the defenders!
 	public void SpawnDefender(GameObject defenderPrefab){
 		float randX = Random.Range(-0.5f, 0.5f);
 		float randY = Random.Range(-0.5f, 0.5f);
@@ -390,7 +403,6 @@ public class Game_Inventory : MonoBehaviour {
 
 
       // Reset all static inventory values on game restart.
-	  
       public void ResetAllInventory(){
             item1bool = false;
             item2bool = false;

@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - House_Artifact
   - PlantPoint
+  - PlayerFeet
+  - Water
+  - WaterStop
   layers:
   - Default
   - TransparentFX
