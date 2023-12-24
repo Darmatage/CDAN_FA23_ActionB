@@ -122,6 +122,7 @@ public class GameHandler : MonoBehaviour {
 		Time.timeScale = 1f;
         GameHandler_PauseMenu.GameisPaused = false;
 		GameHandler_DayNightPhases.roundNumber = 0;
+		gotTokens = 0;
 		GameHandler_DayNightPhases.isDayPhase = true;
 		playerHealth = StartPlayerHealth;
 		artifactHealth = 100;

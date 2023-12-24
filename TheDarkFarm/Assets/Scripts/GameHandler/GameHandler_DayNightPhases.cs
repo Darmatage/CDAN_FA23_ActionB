@@ -329,6 +329,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 	
 	public void EndWinGo(){
 		roundNumber = 0;
+		GameHandler.gotTokens = 0;
 		GetComponent<GameHandler>().ResetAllInventory();
 		SceneManager.LoadScene("EndWon");
 	}
