@@ -39,9 +39,9 @@ public class OpeningComicNavigation : MonoBehaviour {
                                 // GetComponent<CameraShake>().ShakeCamera(1f, 0.3f);
                         //}
                 }
-                else {
-                        SceneManager.LoadScene(nextScene);
-                }
+			else {
+				PanelSkip();
+			}
         }
 
         public void PanelBack(){
@@ -58,8 +58,9 @@ public class OpeningComicNavigation : MonoBehaviour {
                 }
         }
 
-        public void PanelSkip(){
-               SceneManager.LoadScene(nextScene);
-        }
+	public void PanelSkip(){
+		BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
+		SceneManager.LoadScene(nextScene);
+	}
 
 }
