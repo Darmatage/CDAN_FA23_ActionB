@@ -2318,7 +2318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1200909066984942278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5362,7 +5362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561448883819182027, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Text
-      value: 'PITCHFORK: Stabs enemies'
+      value: 'PITCHFORK: Stabs 3 enemies'
       objectReference: {fileID: 0}
     - target: {fileID: 5441139135865127965, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Name
@@ -7046,7 +7046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561448883819182027, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Text
-      value: 'FLAMING HAY: Burning Damage'
+      value: 'FLAMING HAY: Burns 2 nights'
       objectReference: {fileID: 0}
     - target: {fileID: 5441139135865127965, guid: 3ac68e382978c874e9ea78d06f0660e0, type: 3}
       propertyPath: m_Name
