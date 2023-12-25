@@ -56,6 +56,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 
 	public GameObject YouWinDisplay;
 
+	public GameObject CraftSpawn1;
+	public GameObject CraftSpawn2;
+
 	void Awake(){
 		YouWinDisplay.SetActive(false);
 	}
@@ -132,6 +135,8 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		
 		//Spawn enemies from spawn points, at spawn limit interval
 		if (!isDayPhase){
+			CraftSpawn1.SetActive(true);
+			CraftSpawn2.SetActive(false);
 			spawnTimer += 0.01f;
 			if (spawnTimer >= spawnLimit){
 				spawnTimer = 0;
@@ -142,7 +147,7 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 				
 				//just for testing (tracking rhe nuber of enemies that spawn each night):
 				enemiesCount[roundNumber] += 1;
-			}		
+			}			
 		}
     }
 	
@@ -160,6 +165,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		roundNumber += 1;
 		timeNightLength += 1;
 		gameObject.GetComponent<GameHandler>().playerGetTokens(1); // use score for Day #
+		CraftSpawn1.SetActive(true);
+		CraftSpawn2.SetActive(false);
+		
 		//spawnLimit -= (spawnLimit/10);
 		
 		//based on the day, display the correct ground...
@@ -172,22 +180,26 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		*/
 		//unhide currentfarm (using this order: 1,1,2,3,4,5,6,7,8,8 -- display #8 for all remaining):
 		if (roundNumber ==1){
-			farms[0].SetActive(false);
+			farms[0].SetActive(true);
 			waterColliders[0].SetActive(true);
-			farms[1].SetActive(true);
-			waterColliders[1].SetActive(true);
+			CraftSpawn1.SetActive(false);
+			CraftSpawn2.SetActive(true);
 		}
 		else if ((roundNumber >1)&&(roundNumber <9)){
 			farms[roundNumber - 2].SetActive(false);
 			waterColliders[roundNumber - 2].SetActive(false);
 			farms[roundNumber - 1].SetActive(true);
 			waterColliders[roundNumber - 1].SetActive(true);
+			CraftSpawn1.SetActive(false);
+			CraftSpawn2.SetActive(true);
 			} 
 		else {
 			farms[6].SetActive(false);
 			waterColliders[6].SetActive(false);
 			farms[7].SetActive(true);
 			waterColliders[7].SetActive(true);
+			CraftSpawn1.SetActive(false);
+			CraftSpawn2.SetActive(true);
 		}
 
 		//special level 2 code to display grain silo:

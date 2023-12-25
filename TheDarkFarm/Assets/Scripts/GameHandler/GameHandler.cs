@@ -16,9 +16,11 @@ public class GameHandler : MonoBehaviour {
 	public static int artifactHealth = 100;
 	public GameObject artifactText;
 	  
-
 	public static int gotTokens = 0; // use score for Day #
 	public GameObject tokensText;
+	
+	public static int completedRounds=0; // for end-lose screens
+	public GameObject completedRoundsText;
 
 	public bool isDefending = false;
 
@@ -76,13 +78,16 @@ public class GameHandler : MonoBehaviour {
 			
 		Text artifactTextTemp = artifactText.GetComponent<Text>();
 		artifactTextTemp.text = "ARTIFACT: " + artifactHealth;
+		
+		Text completedRoundsTemp = completedRoundsText.GetComponent<Text>();
+		completedRoundsTemp.text = "You completed " + completedRounds + " nights.";
 	}
 
 	public void ArtifactDamage(int hits){
 		artifactHealth -= hits;
 		if (artifactHealth <= 0){
 			artifactHealth = 0;
-			StartCoroutine(DeathPause());
+			StartCoroutine(DeathPause("artifact"));
 		}
 		updateStatsDisplay();
 	}
@@ -90,15 +95,17 @@ public class GameHandler : MonoBehaviour {
       public void playerDies(){
             player.GetComponent<PlayerHurt>().playerDead();       //play Death animation
             lastLevelDied = sceneName;       //allows replaying the Level where you died
-            StartCoroutine(DeathPause());
+            StartCoroutine(DeathPause("player"));
       }
 
-      IEnumerator DeathPause(){
+      IEnumerator DeathPause(string theCause){
             //player.GetComponent<PlayerMove>().isAlive = false;
             //player.GetComponent<PlayerJump>().isAlive = false;
+			completedRounds = gotTokens;
 			yield return new WaitForSeconds(1.0f);
 			ResetAllInventory();
-            SceneManager.LoadScene("EndLose");
+			if (theCause=="player"){SceneManager.LoadScene("EndLose_Died");}
+			else {SceneManager.LoadScene("EndLose");}
       }
 
       public void StartGame() {

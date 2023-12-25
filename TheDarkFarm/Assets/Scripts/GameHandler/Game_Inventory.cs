@@ -18,7 +18,9 @@ public class Game_Inventory : MonoBehaviour {
 	public GameObject CraftButton_Scarecrow;
 	public GameObject CraftButton_FlamingHay;	
 	
-	public Transform CraftSpawn;
+	public Transform CraftSpawnArea;
+	public GameObject CraftSpawn1;
+	public GameObject CraftSpawn2;
 	
 	public GameObject defender_Pitchfork;
 	public GameObject defender_PumpkinTroop;
@@ -107,6 +109,9 @@ public class Game_Inventory : MonoBehaviour {
 		CraftButton_Gasoline.SetActive(false);
 		CraftButton_Scarecrow.SetActive(false);
 		CraftButton_FlamingHay.SetActive(false);
+		
+		CraftSpawn1.SetActive(true);
+		CraftSpawn2.SetActive(false);
 	}
 
 	public void UpdateCraftButtons(){
@@ -395,9 +400,11 @@ public class Game_Inventory : MonoBehaviour {
 
 	//this function spawns the defenders!
 	public void SpawnDefender(GameObject defenderPrefab){
-		float randX = Random.Range(-0.5f, 0.5f);
-		float randY = Random.Range(-0.5f, 0.5f);
-		Vector3 spawnPos = new Vector3(CraftSpawn.position.x + randX, CraftSpawn.position.y + randY, 0);
+		CraftSpawn1.SetActive(false);
+		CraftSpawn2.SetActive(true);
+		float randX = Random.Range(-0.7f, 0.7f);
+		float randY = Random.Range(-0.7f, 0.7f);
+		Vector3 spawnPos = new Vector3(CraftSpawnArea.position.x + randX, CraftSpawnArea.position.y + randY, 0);
 		Instantiate(defenderPrefab, spawnPos, Quaternion.identity);
 	}
 

@@ -9,6 +9,7 @@ public class GameHandler_PauseMenu : MonoBehaviour
 
     public static bool GameisPaused = false;
     public GameObject pauseMenuUI;
+	public GameObject hintsMenuUI;
     public AudioMixer mixer;
     public static float volumeLevel = 0.5f;
     private Slider sliderVolumeCtrl;
@@ -24,9 +25,9 @@ public class GameHandler_PauseMenu : MonoBehaviour
         }
     }
 
-    void Start()
-    {
+    void Start(){
         pauseMenuUI.SetActive(false);
+		hintsMenuUI.SetActive(false);
         GameisPaused = false;
     }
 
@@ -45,12 +46,14 @@ public class GameHandler_PauseMenu : MonoBehaviour
 
     public void Pause(){
         pauseMenuUI.SetActive(true);
+		hintsMenuUI.SetActive(false);
         Time.timeScale = 0f;
         GameisPaused = true;
 		mixer.SetFloat("MusicVolume", -80f);
     }
 
     public void Resume(){
+		hintsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameisPaused = false;
@@ -66,6 +69,10 @@ public class GameHandler_PauseMenu : MonoBehaviour
 	public void PauseButton(){
 		if (GameisPaused){Resume();}
 		else{Pause();}
+	}
+	
+	public void ShowHintsButton(){
+		hintsMenuUI.SetActive(true);
 	}
 	
 }
