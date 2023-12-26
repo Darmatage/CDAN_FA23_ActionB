@@ -53,7 +53,9 @@ public class GameHandler : MonoBehaviour {
                   }
                   if (damage > 0){
                         player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
-                  }
+                  } else {
+					  healthText.GetComponent<UI_TextTween_ScaleColor>().EnableTweens();
+				  }
             }
 
            if (playerHealth > StartPlayerHealth){
@@ -157,8 +159,6 @@ public class GameHandler : MonoBehaviour {
 		Debug.Log("All stats reset. roundNumber = " + GameHandler_DayNightPhases.roundNumber);
       }
 	  
-	  
-
       // Replay the Level where you died
       public void ReplayLastLevel() {
             Time.timeScale = 1f;

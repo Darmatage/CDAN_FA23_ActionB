@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 1112362260791967414}
   - component: {fileID: 6955781035769478025}
   - component: {fileID: 6688745796435790975}
+  - component: {fileID: 7739398392959361487}
   m_Layer: 5
   m_Name: healthPlayer_Text
   m_TagString: Untagged
@@ -363,6 +364,87 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'HEALTH: ???'
+--- !u!114 &7739398392959361487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584043687945933199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064e549b053d72c4a9592f130777502c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 2.1169035
+      outSlope: 2.1169035
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.072916664
+    - serializedVersion: 3
+      time: 0.4
+      value: 1.3
+      inSlope: -0.013668252
+      outSlope: -0.013668252
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.55758715
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -1.4252722
+      outSlope: -1.4252722
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06944448
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveColor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.750237
+      outSlope: 4.750237
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.047410425
+    - serializedVersion: 3
+      time: 0.5273102
+      value: 0.91100407
+      inSlope: -0.00367177
+      outSlope: -0.00367177
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.28714082
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -5.1460967
+      outSlope: -5.1460967
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.035259172
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animColor: {r: 0.7536265, g: 1, b: 0.7396226, a: 1}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
+  tweenEnabled: 0
 --- !u!1 &1697149504964612570
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,16 +477,16 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7914296176928803557}
-  - {fileID: 2286590321716936331}
   - {fileID: 3698230738143165365}
   - {fileID: 3519556027309176126}
   - {fileID: 7820105191248668667}
+  - {fileID: 1069224330614729255}
+  - {fileID: 2286590321716936331}
   - {fileID: 8717760203938559962}
   - {fileID: 8111187508653830980}
   - {fileID: 4198888597584689549}
   - {fileID: 499831254743323588}
   - {fileID: 7647535400497492833}
-  - {fileID: 1069224330614729255}
   - {fileID: 9006702421185499772}
   - {fileID: 1200909066984942278}
   - {fileID: 1408457854684776197}

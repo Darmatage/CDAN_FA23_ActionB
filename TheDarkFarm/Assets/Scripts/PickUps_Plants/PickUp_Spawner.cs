@@ -26,7 +26,7 @@ public class PickUp_Spawner : MonoBehaviour{
 				newPickup.transform.parent = gameObject.transform;
 			}
 			else {
-				Debug.Log("There is already a pickup at this spawner");
+				//Debug.Log("There is already a pickup at this spawner");
 			}
 		}
 		
