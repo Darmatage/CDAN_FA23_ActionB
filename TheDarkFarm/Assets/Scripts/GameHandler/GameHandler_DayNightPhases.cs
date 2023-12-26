@@ -165,8 +165,11 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		roundNumber += 1;
 		timeNightLength += 1;
 		gameObject.GetComponent<GameHandler>().playerGetTokens(1); // use score for Day #
-		CraftSpawn1.SetActive(true);
-		CraftSpawn2.SetActive(false);
+		
+		if (Game_Inventory.hasCrafted){
+			CraftSpawn1.SetActive(false);
+			CraftSpawn2.SetActive(true);
+		}
 		
 		//spawnLimit -= (spawnLimit/10);
 		
@@ -182,24 +185,18 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		if (roundNumber ==1){
 			farms[0].SetActive(true);
 			waterColliders[0].SetActive(true);
-			CraftSpawn1.SetActive(false);
-			CraftSpawn2.SetActive(true);
 		}
 		else if ((roundNumber >1)&&(roundNumber <9)){
 			farms[roundNumber - 2].SetActive(false);
 			waterColliders[roundNumber - 2].SetActive(false);
 			farms[roundNumber - 1].SetActive(true);
 			waterColliders[roundNumber - 1].SetActive(true);
-			CraftSpawn1.SetActive(false);
-			CraftSpawn2.SetActive(true);
 			} 
 		else {
 			farms[6].SetActive(false);
 			waterColliders[6].SetActive(false);
 			farms[7].SetActive(true);
 			waterColliders[7].SetActive(true);
-			CraftSpawn1.SetActive(false);
-			CraftSpawn2.SetActive(true);
 		}
 
 		//special level 2 code to display grain silo:
@@ -248,12 +245,9 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		
 		DayMusic.Play();
 		NightMusic.Stop();
-		
 		DisplayDayText();
-		
 		StartCoroutine(FadeTextInAndOut());
 	}
-	
 	
 	public void DisplayDayText(){
 		Text roundTextTemp = roundText.GetComponent<Text>();
@@ -318,8 +312,6 @@ public class GameHandler_DayNightPhases : MonoBehaviour{
 		yield return new WaitForSeconds(3f);
 		Destroy(newSmoke);
 	}
-	
-	
 	
 	IEnumerator FadeTextIn(GameObject fadeText){
 		float alphaLevel = 0;

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Game_Inventory : MonoBehaviour {
+	public static bool hasCrafted = false;
+	
 	public AudioSource inventorySFX;
 	public AudioSource digPlantSFX;
 	public GameObject InventoryMenu;
@@ -400,6 +402,7 @@ public class Game_Inventory : MonoBehaviour {
 
 	//this function spawns the defenders!
 	public void SpawnDefender(GameObject defenderPrefab){
+		hasCrafted=true;
 		CraftSpawn1.SetActive(false);
 		CraftSpawn2.SetActive(true);
 		float randX = Random.Range(-0.7f, 0.7f);
@@ -408,28 +411,27 @@ public class Game_Inventory : MonoBehaviour {
 		Instantiate(defenderPrefab, spawnPos, Quaternion.identity);
 	}
 
+	// Reset all static inventory values on game restart.
+	public void ResetAllInventory(){
+		item1bool = false;
+		item2bool = false;
+		item3bool = false;
+		item4bool = false;
+		item5bool = false;
+		item6bool = false;
+		item7bool = false;
+		item8bool = false;
+		item9bool = false;
 
-      // Reset all static inventory values on game restart.
-      public void ResetAllInventory(){
-            item1bool = false;
-            item2bool = false;
-            item3bool = false;
-            item4bool = false;
-            item5bool = false;
-			item6bool = false;
-            item7bool = false;
-            item8bool = false;
-            item9bool = false;
-
-            item1num = 0; // object name
-            item2num = 0; // object name
-            item3num = 0; // object name
-            item4num = 0; // object name
-            item5num = 0; // object name
-		    item6num = 0; // object name
-            item7num = 0; // object name
-            item8num = 0; // object name
-            item9num = 0; // object name
-      }
+		item1num = 0; // object name
+		item2num = 0; // object name
+		item3num = 0; // object name
+		item4num = 0; // object name
+		item5num = 0; // object name
+		item6num = 0; // object name
+		item7num = 0; // object name
+		item8num = 0; // object name
+		item9num = 0; // object name
+	}
 
 }
