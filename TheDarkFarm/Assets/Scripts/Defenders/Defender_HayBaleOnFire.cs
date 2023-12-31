@@ -68,13 +68,15 @@ public class Defender_HayBaleOnFire : MonoBehaviour{
 
 	//destroy enemies on contact if on fire
 	public void OnTriggerEnter2D(Collider2D other){
-		if ((other.gameObject.tag == "Enemy")&&(isOnFire == true)){
-			GameObject smokeVFX = Instantiate(enemyDeathSmoke, other.transform.position, Quaternion.identity);
-			StartCoroutine(DelayDestroySmoke(smokeVFX));
-			other.gameObject.GetComponent<EnemyMeleeDamage>().TakeDamage(100);
-			Debug.Log("I burned an enemy!");
-			//monsterDeathSFX.Play();
-			//Destroy(other.gameObject);
+		if (isOnFire == true){
+			if ((other.gameObject.tag == "Enemy")||(other.gameObject.tag == "EnemyGoo")){
+				GameObject smokeVFX = Instantiate(enemyDeathSmoke, other.transform.position, Quaternion.identity);
+				StartCoroutine(DelayDestroySmoke(smokeVFX));
+				other.gameObject.GetComponent<EnemyMeleeDamage>().TakeDamage(100);
+				Debug.Log("I burned an enemy!");
+				//monsterDeathSFX.Play();
+				//Destroy(other.gameObject);
+			}
 		}
 	}
 	
