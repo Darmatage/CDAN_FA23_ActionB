@@ -6,6 +6,6 @@ The current build can be played here: https://the-dark-farm.itch.io/the-dark-far
 The game was pitched as a "**Horror Tower-Defense Farming Game**". 
 It features day phases for gathering resources and crafting defenses, and night phases for warding off encroaching monsters.
 
-<p align=center>
+
 ![](https://github.com/Darmatage/CDAN_FA23_ActionB/blob/main/Photoshop_Files/DarkFarm_Recording_FinalCut.gif)
-</p>
+
