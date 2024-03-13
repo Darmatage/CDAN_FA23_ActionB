@@ -4,8 +4,10 @@ The designers are Dee McKenna, Ava Matt, Adam Gaal, and Rob Menino. They created
 The current build can be played here: https://the-dark-farm.itch.io/the-dark-farm
 
 <br>
-The game was pitched as a "**Horror Tower-Defense Farming Game**". 
+The game was pitched as a "<b>Horror Tower-Defense Farming Game</b>". 
 It features day phases for gathering resources and crafting defenses, and night phases for warding off encroaching monsters.
+
+<br>
 
 <p align=center>
 <img src=https://github.com/Darmatage/CDAN_FA23_ActionB/blob/main/Photoshop_Files/DarkFarm_Recording_FinalCut.gif>
